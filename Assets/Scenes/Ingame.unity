@@ -196,7 +196,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9200db9a243edbb4487792da9b792cc0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -204,7 +204,7 @@ SpriteRenderer:
   m_Size: {x: 2.47, y: 2.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &345811456
@@ -217,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 345811457}
   - component: {fileID: 345811458}
+  - component: {fileID: 345811459}
   m_Layer: 0
   m_Name: buy area (2)
   m_TagString: Untagged
@@ -291,6 +292,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &345811459
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345811456}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.47, y: 2.4799998, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0.00000035762787}
 --- !u!1 &381887522
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 403724397}
   - component: {fileID: 403724398}
+  - component: {fileID: 403724399}
   m_Layer: 0
   m_Name: buy area (3)
   m_TagString: Untagged
@@ -455,6 +470,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &403724399
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403724396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.47, y: 2.4799998, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0.00000035762787}
 --- !u!1 &436272776
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +605,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436272776}
   m_CullTransparentMesh: 1
+--- !u!1 &497265934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 497265935}
+  m_Layer: 0
+  m_Name: Controllers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &497265935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497265934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 50, y: 50, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 906441909}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508763958
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,9 +788,6 @@ MonoBehaviour:
   shopCanvas: {fileID: 2033108507}
   mainCamera: {fileID: 519420028}
   buy_stations: {fileID: 0}
-  main_stations: {fileID: 0}
-  normal_lub: {fileID: 0}
-  lub_cub_0: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,7 +865,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -888,7 +945,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9200db9a243edbb4487792da9b792cc0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -896,7 +953,7 @@ SpriteRenderer:
   m_Size: {x: 2.47, y: 2.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &582428845
@@ -1154,7 +1211,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9200db9a243edbb4487792da9b792cc0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1162,7 +1219,7 @@ SpriteRenderer:
   m_Size: {x: 2.47, y: 2.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &769231088
@@ -1238,7 +1295,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9200db9a243edbb4487792da9b792cc0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1246,7 +1303,7 @@ SpriteRenderer:
   m_Size: {x: 2.47, y: 2.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &772159327
@@ -1400,9 +1457,6 @@ MonoBehaviour:
   shopCanvas: {fileID: 2033108507}
   mainCamera: {fileID: 519420028}
   buy_stations: {fileID: 0}
-  main_stations: {fileID: 0}
-  normal_lub: {fileID: 0}
-  lub_cub_0: {fileID: 0}
 --- !u!1 &779276379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,7 +1482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779276379}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9, z: 10}
+  m_LocalPosition: {x: 0, y: 9, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1530,6 +1584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 847945185}
   - component: {fileID: 847945186}
+  - component: {fileID: 847945187}
   m_Layer: 0
   m_Name: buy area (5)
   m_TagString: Untagged
@@ -1604,6 +1659,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &847945187
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847945184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.47, y: 2.4799998, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0.00000035762787}
 --- !u!1 &849088762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,7 +1745,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9200db9a243edbb4487792da9b792cc0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1685,7 +1753,7 @@ SpriteRenderer:
   m_Size: {x: 2.47, y: 2.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &871328532
@@ -1844,6 +1912,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896503922}
   m_CullTransparentMesh: 1
+--- !u!1 &906441908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 906441909}
+  - component: {fileID: 906441910}
+  m_Layer: 0
+  m_Name: Shop Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &906441909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906441908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 497265935}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &906441910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906441908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98915d7b7012e46e699d016944807ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCanvas: {fileID: 608047938}
+  shopCanvas: {fileID: 2033108507}
+  mainCamera: {fileID: 519420028}
+  buy_stations: {fileID: 1742154215}
+  main_stations: {fileID: 1220972249}
+  normal_lub: {fileID: 8762524092250784633, guid: 858e2475a30ba47c898911697c8830b8, type: 3}
+  lub_cub_0_transform: {fileID: 939517242}
+  lub_cub_0: {fileID: 939517241}
 --- !u!1 &939517241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1917,7 +2037,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9200db9a243edbb4487792da9b792cc0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1925,7 +2045,7 @@ SpriteRenderer:
   m_Size: {x: 2.47, y: 2.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &992633753
@@ -2001,7 +2121,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9200db9a243edbb4487792da9b792cc0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2009,7 +2129,7 @@ SpriteRenderer:
   m_Size: {x: 2.47, y: 2.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1096392717
@@ -2085,7 +2205,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9200db9a243edbb4487792da9b792cc0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2093,7 +2213,7 @@ SpriteRenderer:
   m_Size: {x: 2.47, y: 2.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1167371695
@@ -2227,6 +2347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1417997149}
   - component: {fileID: 1417997150}
+  - component: {fileID: 1417997151}
   m_Layer: 0
   m_Name: buy area (7)
   m_TagString: Untagged
@@ -2301,6 +2422,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1417997151
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417997148}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.47, y: 2.4799998, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0.00000035762787}
 --- !u!1 &1474977551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2378,7 +2512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474977551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 1.2596563, y: 1.4845592, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2670,9 +2804,6 @@ MonoBehaviour:
   shopCanvas: {fileID: 2033108507}
   mainCamera: {fileID: 519420028}
   buy_stations: {fileID: 1742154215}
-  main_stations: {fileID: 1220972249}
-  normal_lub: {fileID: 8762524092250784633, guid: 858e2475a30ba47c898911697c8830b8, type: 3}
-  lub_cub_0: {fileID: 939517242}
 --- !u!1 &1709592438
 GameObject:
   m_ObjectHideFlags: 0
@@ -2803,6 +2934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1749431577}
   - component: {fileID: 1749431578}
+  - component: {fileID: 1749431579}
   m_Layer: 0
   m_Name: buy area (8)
   m_TagString: Untagged
@@ -2877,6 +3009,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1749431579
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749431576}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.47, y: 2.4799998, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0.00000035762787}
 --- !u!1 &1799196764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,6 +3032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1799196765}
   - component: {fileID: 1799196766}
+  - component: {fileID: 1799196767}
   m_Layer: 0
   m_Name: buy area (4)
   m_TagString: Untagged
@@ -2961,6 +3107,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1799196767
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799196764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.47, y: 2.4799998, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0.00000035762787}
 --- !u!1 &1816922527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2971,6 +3130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1816922528}
   - component: {fileID: 1816922529}
+  - component: {fileID: 1816922530}
   m_Layer: 0
   m_Name: buy area (6)
   m_TagString: Untagged
@@ -3045,6 +3205,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1816922530
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816922527}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.47, y: 2.4799998, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0.00000035762787}
 --- !u!1 &1868337697
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,7 +3291,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9200db9a243edbb4487792da9b792cc0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3126,7 +3299,7 @@ SpriteRenderer:
   m_Size: {x: 2.47, y: 2.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1877894241
@@ -3219,6 +3392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1914650863}
   - component: {fileID: 1914650864}
+  - component: {fileID: 1914650865}
   m_Layer: 0
   m_Name: buy area (1)
   m_TagString: Untagged
@@ -3293,6 +3467,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1914650865
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914650862}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.47, y: 2.4799998, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0.00000035762787}
 --- !u!1 &1973911937
 GameObject:
   m_ObjectHideFlags: 0
@@ -3303,6 +3490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1973911938}
   - component: {fileID: 1973911939}
+  - component: {fileID: 1973911940}
   m_Layer: 0
   m_Name: buy area (0)
   m_TagString: Untagged
@@ -3377,6 +3565,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1973911940
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973911937}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.47, y: 2.4799998, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0.00000035762787}
 --- !u!1 &2033108507
 GameObject:
   m_ObjectHideFlags: 0

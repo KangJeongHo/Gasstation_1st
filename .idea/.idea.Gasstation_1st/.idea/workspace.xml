@@ -4,7 +4,11 @@
     <list default="true" id="1c04897e-6f0f-45c0-9bed-486daf3292c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Gasstation_1st/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gasstation_1st/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Ingame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Ingame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Shop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Shop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/GameGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/GameGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/ShopController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ShopController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,10 +72,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="868">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1496">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="868" />
+      <option name="pid" value="1496" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -94,6 +98,10 @@
       <workItem from="1673510942118" duration="8884000" />
       <workItem from="1673570443182" duration="6010000" />
       <workItem from="1673844655941" duration="8612000" />
+      <workItem from="1673860154006" duration="313000" />
+      <workItem from="1673860483620" duration="13424000" />
+      <workItem from="1673934334170" duration="2154000" />
+      <workItem from="1673945166913" duration="12604000" />
     </task>
     <servers />
   </component>
@@ -107,13 +115,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Script/GameManager.cs</url>
-          <line>11</line>
+          <line>19</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Script/GameManager.cs" initialLine="11" containingFunctionPresentation="method 'Start'">
             <startOffsets>
-              <option value="218" />
+              <option value="440" />
             </startOffsets>
             <endOffsets>
-              <option value="219" />
+              <option value="441" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

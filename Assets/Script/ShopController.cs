@@ -7,12 +7,9 @@ using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime;
-
+// 플레이어 움직임 관련 / 오브젝트를 움직이기 위한 대본
 public class ShopController : MonoBehaviour
 {
-    public GameObject mainCanvas; //메인 캔버스
-    public GameObject shopCanvas; //상점 캔버스
-    public GameObject mainCamera; //메인 카메라
     public GameObject buy_stations; // 주유기 설치 칸 보기(부모 오브젝트)
     public GameObject main_stations; // 주유기 설치 되고 나면 보이는 칸 (부모 오브젝트)
     public GameObject normal_lub; // 주유기 프리팹 소환하기 위한 오브젝트 선언
@@ -22,20 +19,13 @@ public class ShopController : MonoBehaviour
     public string moneystring; // 머니 오브젝트에 들은 값을 스트링 함수로 쓸수 있게 담을 그릇.
     private string money; // moneystring에서 가져온 값을 글자 다 빼버리기 위한 그릇.
     private double doublemoney; // 다 뺴버린 값인 money 함수의 내용을 담기 위한 그릇.
-    // Start is called before the first frame update
     void Start()
     {
         doublemoney = 0f;
         money = String.Empty;
-        mainCanvas = GameObject.Find("Main Canvas");
-        shopCanvas = GameObject.Find("Shop Canvas");
-        mainCamera = GameObject.Find("Main Camera");
-        
         moneystring = moneytext.text.ToString();
-        
         money = Regex.Replace(moneystring, @"\D","");
         doublemoney = double.Parse(money);
-        
     }
 
     // Update is called once per frame

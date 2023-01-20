@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+    //상점 버튼을 위한 스크립트
 public class Shop : MonoBehaviour
 {
-
     public GameObject mainCanvas; //메인 캔버스
     public GameObject shopCanvas; //상점 캔버스
     public GameObject mainCamera; //메인 카메라
@@ -14,6 +14,10 @@ public class Shop : MonoBehaviour
     //오브젝트들을 인스턴스화시켜서 선언을 줄여보자.
     //주유소 스테이션의 주유공간을 배열로 자동 프리팹 생성되게 바꿔보도록 하자.
     // 유니티 생명주기 잘 써보기.
+    
+    
+    
+    
     void start()
     {
         mainCanvas = GameObject.Find("Main Canvas");

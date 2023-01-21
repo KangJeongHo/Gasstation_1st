@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.Serialization;
 
 public class GameDirector : MonoBehaviour
 {
@@ -10,9 +12,31 @@ public class GameDirector : MonoBehaviour
     // 자동차가 생기는건 플레이어일까..? 아니면 유지 관리가 플레이어일까..?
     // 플레이어의 주체에 뇌절이 오기 시작함.
     // 플레이하는 우리를 위해서 우리 스스로를 플레이어로 지칭해야할까?
+    private static GameDirector Inst = null;
+
+    #region MenuValue
+
+    public  static MenuLogicValue MenuValue
+    {
+        get { return Inst.m_MenuValue; }
+    }
+    [SerializeField] private MenuLogicValue m_MenuValue = new MenuLogicValue();
+    [Serializable]
+    public class MenuLogicValue
+    {
+        public static bool Is_Menu_Cancle = false;
+        
+        public GameObject Menu_Cancle_Panel;
+        public float Menu_Down_Speed;
+        public int Menu_Distance;
+        public int Menu_Count;
+        public GameObject Button;
+    }
+
+    #endregion
     void Start()
     {
-        
+        Inst = this;
     }
 
     // Update is called once per frame

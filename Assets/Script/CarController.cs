@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime;
+using UnityEditor;
 using Random = UnityEngine.Random;
 
 public class CarController : MonoBehaviour
@@ -53,6 +54,7 @@ public class CarController : MonoBehaviour
      */
 
     private float RedCarTime = 0f;
+    private IEnumerator box;
     IEnumerator CarSpawn()
     {
 
@@ -71,15 +73,17 @@ public class CarController : MonoBehaviour
 
         }
 
-        yield return StartCoroutine("randomtime");
+        box = randomtime();
+        yield return StartCoroutine(box);
+        // 코루틴을 ""로 불러 들어오면 탐색하는데 시간이 걸리고 메모리를 차지하니까 전에 선언해서 받아올것.
     }
 
-    // IEnumerator randomtime()
-    // {
-    //     float b = Random.Range(1, 10);
-    //
-    //     yield return WaitForSeconds(b);
-    // }
+     IEnumerator randomtime()
+     {
+         float b = Random.Range(1, 10);
+
+         yield break;/*return new WaitForSeconds(b)*/;
+     }
 }
 
 

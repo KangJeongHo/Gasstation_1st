@@ -556,8 +556,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MenuValue:
     Menu_Cancle_Panel: {fileID: 1217112560}
-    Menu_Down_Speed: 100
-    Menu_Distance: 30
+    Menu_Down_Speed: 200
+    Menu_Distance: 35
     Menu_Count: 2
     Button: {fileID: 6532066657927940618, guid: eb58695d3534f442db02478c9ee35552, type: 3}
 --- !u!4 &479131635

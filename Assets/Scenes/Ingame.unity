@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 319846742}
   - component: {fileID: 319846743}
   m_Layer: 0
-  m_Name: lub cub (5)
+  m_Name: lub cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 547765983}
   - component: {fileID: 547765984}
   m_Layer: 0
-  m_Name: lub cub (3)
+  m_Name: lub cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1233,7 +1233,7 @@ GameObject:
   - component: {fileID: 727739762}
   - component: {fileID: 727739763}
   m_Layer: 0
-  m_Name: lub cub (2)
+  m_Name: lub cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1317,7 +1317,7 @@ GameObject:
   - component: {fileID: 769231089}
   - component: {fileID: 769231090}
   m_Layer: 0
-  m_Name: lub cub (7)
+  m_Name: lub cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1767,7 +1767,7 @@ GameObject:
   - component: {fileID: 849088763}
   - component: {fileID: 849088764}
   m_Layer: 0
-  m_Name: lub cub (8)
+  m_Name: lub cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1884,9 +1884,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3816fa3a6460413ba000189bbcbca04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 0
+  LubCubeObject: {fileID: 0}
   RedCar: {fileID: 8762524092250784633, guid: 0df29cd5fb15b4a6c80a77d6ba9fac4a, type: 3}
-  a: {fileID: 939517241}
 --- !u!1 &871328532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,8 +2089,8 @@ MonoBehaviour:
   buy_stations: {fileID: 1742154215}
   main_stations: {fileID: 1220972249}
   normal_lub: {fileID: 8762524092250784633, guid: 858e2475a30ba47c898911697c8830b8, type: 3}
-  lub_cub_0_transform: {fileID: 939517242}
-  lub_cub_0: {fileID: 939517241}
+  lub_cube_0_transform: {fileID: 939517242}
+  lub_cube_0: {fileID: 939517241}
   moneytext: {fileID: 1255315680}
   moneystring: 
 --- !u!1 &939517241
@@ -2105,7 +2104,7 @@ GameObject:
   - component: {fileID: 939517242}
   - component: {fileID: 939517243}
   m_Layer: 0
-  m_Name: lub cub (0)
+  m_Name: lub cube (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2189,7 +2188,7 @@ GameObject:
   - component: {fileID: 992633754}
   - component: {fileID: 992633755}
   m_Layer: 0
-  m_Name: lub cub (1)
+  m_Name: lub cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2273,7 +2272,7 @@ GameObject:
   - component: {fileID: 1096392718}
   - component: {fileID: 1096392719}
   m_Layer: 0
-  m_Name: lub cub (4)
+  m_Name: lub cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3427,7 +3426,7 @@ GameObject:
   - component: {fileID: 1868337698}
   - component: {fileID: 1868337699}
   m_Layer: 0
-  m_Name: lub cub (6)
+  m_Name: lub cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

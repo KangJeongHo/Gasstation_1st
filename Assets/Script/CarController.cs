@@ -12,78 +12,73 @@ using Random = UnityEngine.Random;
 
 public class CarController : MonoBehaviour
 {
-    public double time;
-    private Transform lub_cub_0_transform; // 주유기 설치를 위한 부모 찾기? 왜 main_stations와 중첩되는 것 같음.
-    public GameObject RedCar; // 주유기 프리팹 소환하기 위한 오브젝트 선언
-    private int flag;
-
-    public GameObject a;
-
     // 플레이어 움직임 관련 / 오브젝트를 움직이기 위한 대본
+    
+    //void start
+    public GameObject LubCubeObject;
+    private Transform lub_cube_0_transform;
+    private IEnumerator LubCheckCorutine;
+    //void LubCheck
+    private IEnumerator CarSpawnCoroutine;
+    //void CarSpawn
+    private int CarSpawnbool;
+    private int RandomSpawnTime;
+    public GameObject RedCar; // 주유기 프리팹 소환하기 위한 오브젝트 선언
+    private float RedCarTime;
+    private IEnumerator RandomTimeCoroutine;
     void Start()
     {
-        a = transform.Find("lub cub (0)").gameObject;
-        lub_cub_0_transform = GameObject.Find("Shop Controller").GetComponent<ShopController>().lub_cub_0_transform;
-
+        Debug.Log("CarController 시작");
+        LubCubeObject = GameObject.Find("lub cube (0)");
+        lub_cube_0_transform = GameObject.Find("Shop Controller").GetComponent<ShopController>().lub_cube_0_transform;
+        
+        Debug.Log("LubCheck를 위한 코루틴 준비 완료.");
+        LubCheckCorutine = LubCheck();
+        StartCoroutine(LubCheckCorutine);
         //InvokeRepeating("CarSpawn",Random.Range(1,10),1);
-
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    IEnumerator LubCheck()
     {
-        if (a.activeSelf == true)
+        Debug.Log("LubCheck 코루틴 진입.");
+        Debug.Log(LubCubeObject.activeSelf);
+        while(LubCubeObject.activeSelf == false)
         {
-            Debug.Log("카 스폰 작동했습니다.");
-            StartCoroutine("CarSpawn");
-
+            Debug.Log("주유기 설치 인식 while문 작동중. (1초주기)");
+            yield return new WaitForSeconds(1f);
         }
+        Debug.Log("주유기 설치 인식 while문 사용 종료됨.");
+        CarSpawnCoroutine = CarSpawn(); 
+        StartCoroutine(CarSpawnCoroutine);
+        
+        Debug.Log("LubCheck 코루틴 진입. ");
     }
-    /*
-     * 0. 어느 주기로 차가 생성되어야 할지 생각해야함.
-     * 1. 자동차가 게임 속의 시간대비 주유기에 와야함.
-     * 2. 주유기가 있는지 인지 후 차가 오기 시작해야함.
-     * 3. 차가 왔을때 차를 눌러줘야함.
-     * 4. 차를 눌러주면 차들의 원하는 수치(랜덤)에 맞게 기름을 넣어줘야함.
-     * 5. 기름이 꽉 차면 시간안에 빼줘야함.
-     * 6. 그 차를 클릭하여 보내고 나면 기름 넣은 양만큼 돈을 줌.
-     * 7. 만족도나 행운수치, 인기도 등이 높으면 팁을 줌.
-     * 8. 
-     *
-     * 
-     */
-
-    private float RedCarTime = 0f;
-    private IEnumerator box;
+ 
     IEnumerator CarSpawn()
     {
-
-        flag = 1;
-        while (flag == 1)
+        CarSpawnbool = 1;
+        RandomSpawnTime = Random.Range(1, 10);
+        Debug.Log("현재 기다려야 하는 시간(랜덤) : " + RandomSpawnTime);
+        yield return new WaitForSeconds(RandomSpawnTime);
+        RedCarTime = 0;
+        while (CarSpawnbool == 0)
         {
-            GameObject carInstance1 = Instantiate(RedCar, lub_cub_0_transform);
-            Debug.Log(carInstance1.activeSelf);
-            RedCarTime += Time.deltaTime;
+            GameObject carInstance1 = Instantiate(RedCar, lub_cube_0_transform);
             if (RedCarTime > Random.Range(1, 10))
             {
-                flag = 0;
+                CarSpawnbool = 0;
+                Destroy(carInstance1);
             }
             
-            Destroy(carInstance1);
-
+            yield return new WaitForSeconds(1f);
+            RedCarTime++;
         }
-
-        box = randomtime();
-        yield return StartCoroutine(box);
-        // 코루틴을 ""로 불러 들어오면 탐색하는데 시간이 걸리고 메모리를 차지하니까 전에 선언해서 받아올것.
+        
+        Debug.Log("차 떠나가서 다시 생성작업 들어감.");
+        yield return StartCoroutine(CarSpawnCoroutine);
+        // 차가 계속 스폰 될 수 있는 반복 시키기.
     }
 
-     IEnumerator randomtime()
-     {
-         float b = Random.Range(1, 10);
-
-         yield break;/*return new WaitForSeconds(b)*/;
-     }
 }
 
 

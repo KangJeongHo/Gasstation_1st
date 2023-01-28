@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime;
-// 플레이어 움직임 관련 / 오브젝트를 움직이기 위한 대본
+/// 플레이어 움직임 관련 / 오브젝트를 움직이기 위한 대본
 public class ShopController : MonoBehaviour
 {
     public GameObject buy_stations; // 주유기 설치 칸 보기(부모 오브젝트)
@@ -59,6 +59,8 @@ public class ShopController : MonoBehaviour
                     // 위 선언은 부모의 좌표 + 그 옆에 어디 위치로 소환하는 방법.
                     
                     buy_stations.SetActive(false);
+                    GameManager.Instance.LubCountAdd();
+                    
                 }
 
             }

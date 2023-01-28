@@ -10,73 +10,68 @@ using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEditor;
 using Random = UnityEngine.Random;
 
+    /// 플레이어 움직임 관련 / 오브젝트를 움직이기 위한 대본
 public class CarController : MonoBehaviour
 {
-    // 플레이어 움직임 관련 / 오브젝트를 움직이기 위한 대본
     
-    //void start
+    /* void start */
     public GameObject LubCubeObject;
     private Transform lub_cube_0_transform;
     private IEnumerator LubCheckCorutine;
-    //void LubCheck
+
+    /* void LubCheck */
+    private int lubcount0;
     private IEnumerator CarSpawnCoroutine;
-    //void CarSpawn
-    private int CarSpawnbool;
+
+    /* void CarSpawn */
     private int RandomSpawnTime;
-    public GameObject RedCar; // 주유기 프리팹 소환하기 위한 오브젝트 선언
+    private int CarWaitingTime;
     private float RedCarTime;
-    private IEnumerator RandomTimeCoroutine;
+    public GameObject RedCar; // 주유기 프리팹 소환하기 위한 오브젝트 선언
+    private GameObject carInstance1 = null;
     void Start()
     {
-        Debug.Log("CarController 시작");
         LubCubeObject = GameObject.Find("lub cube (0)");
         lub_cube_0_transform = GameObject.Find("Shop Controller").GetComponent<ShopController>().lub_cube_0_transform;
-        
-        Debug.Log("LubCheck를 위한 코루틴 준비 완료.");
         LubCheckCorutine = LubCheck();
         StartCoroutine(LubCheckCorutine);
         //InvokeRepeating("CarSpawn",Random.Range(1,10),1);
     }
-    
     IEnumerator LubCheck()
     {
-        Debug.Log("LubCheck 코루틴 진입.");
-        Debug.Log(LubCubeObject.activeSelf);
-        while(LubCubeObject.activeSelf == false)
+        while(GameObject.Find("EventSystem").GetComponent<GameManager>().lubCount0 == 0)
         {
-            Debug.Log("주유기 설치 인식 while문 작동중. (1초주기)");
             yield return new WaitForSeconds(1f);
         }
-        Debug.Log("주유기 설치 인식 while문 사용 종료됨.");
         CarSpawnCoroutine = CarSpawn(); 
         StartCoroutine(CarSpawnCoroutine);
         
-        Debug.Log("LubCheck 코루틴 진입. ");
     }
  
     IEnumerator CarSpawn()
     {
-        CarSpawnbool = 1;
-        RandomSpawnTime = Random.Range(1, 10);
-        Debug.Log("현재 기다려야 하는 시간(랜덤) : " + RandomSpawnTime);
-        yield return new WaitForSeconds(RandomSpawnTime);
+        RepeatCarSpawn:
+        RandomSpawnTime = Random.Range(5, 15);
+        CarWaitingTime = Random.Range(5, 15);
         RedCarTime = 0;
-        while (CarSpawnbool == 0)
+        yield return new WaitForSeconds(RandomSpawnTime);
+        while (GameObject.Find("EventSystem").GetComponent<GameManager>().lubCount0 == 1)
         {
-            GameObject carInstance1 = Instantiate(RedCar, lub_cube_0_transform);
-            if (RedCarTime > Random.Range(1, 10))
+            if (carInstance1 == null)
             {
-                CarSpawnbool = 0;
-                Destroy(carInstance1);
+                 carInstance1 = Instantiate(RedCar, lub_cube_0_transform);
             }
-            
-            yield return new WaitForSeconds(1f);
+            if (RedCarTime > CarWaitingTime)
+            {
+                
+                Destroy(carInstance1);
+                break;
+            }
             RedCarTime++;
+            yield return new WaitForSeconds(1f);
         }
-        
-        Debug.Log("차 떠나가서 다시 생성작업 들어감.");
-        yield return StartCoroutine(CarSpawnCoroutine);
-        // 차가 계속 스폰 될 수 있는 반복 시키기.
+        carInstance1 = null;
+        goto RepeatCarSpawn;
     }
 
 }

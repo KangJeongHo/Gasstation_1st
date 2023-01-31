@@ -37,14 +37,6 @@ public class ShopController : MonoBehaviour
         {
             if (Physics.Raycast(ray, out hit))
             {
-                /* 1. 주유소 칸 상자를 클릭한 값을 저장하게 함.
-                 * 1-1. 주유소 칸 상자를 나중에 어디 값에다가 카운드해서 저장해야겠음.
-                 *      ex: lub.buy.1 ++; , lubname.text = "기본주유기"
-                 * 2. 주유소 상자들을 눈앞에서 사라지게 해야함. 이게 사라지는 순서가 언제인지가 중요한듯. 사실상 빈공간 클릭했는데
-                 *      사라지면 안되니깐.
-                 * 3. 주유소 상자들이 사라진 후 그 자리에 주유기가 추가해야함 
-                    4. case로 항목을 선택지로 추가하되 case전에 공통된 항목으로 2번은 가능할듯.
-                 */
                 if (hit.transform.gameObject.name == "buy area (0)") // 주유기 첫번째 칸을 클릭했을때
                 {
                     // GameObject myInstance = Instantiate(prefab); 부모 지정 없이 인스턴스화 하는 방법.

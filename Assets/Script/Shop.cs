@@ -12,6 +12,7 @@ using static Item;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 #region Pop_Up
+
 public class Shop_Pop_Pop_Up_Panel : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
@@ -19,6 +20,7 @@ public class Shop_Pop_Pop_Up_Panel : MonoBehaviour, IPointerClickHandler
         Shop.m_Pop_Pop_Up.SetActive(false);
     }
 }
+
 public class Shop_Pop_Pop_Up : MonoBehaviour
 {
     public static Item.Item_Info Info;
@@ -36,23 +38,28 @@ public class Shop_Pop_Pop_Up : MonoBehaviour
         Amount_Text.text = Amount_Number.ToString();
         UI_Change();
     }
+
     public static void Calculation()
     {
         Info.AddAmount(Amount_Number);
         Debug.Log(Info.Name + " 가격 : " + Info.Value + " 소지 수 : " + Info.HasAmount);
         Reset_Pop_Pop_Up();
     }
+
     void Insert_Component_Cancle_Panel()
     {
         transform.Find("Pop_Pop_Up_Cancle_Panel").gameObject.AddComponent<Shop_Pop_Pop_Up_Panel>();
     }
+
     #region Button
+
     void Insert_Component_Button()
     {
         m_Minus.AddComponent<Minus>();
         m_Plus.AddComponent<Plus>();
         m_Buy_Button.AddComponent<Buy_Button>();
     }
+
     class Buy_Button : MonoBehaviour, IPointerClickHandler
     {
         public void OnPointerClick(PointerEventData eventData)
@@ -60,14 +67,17 @@ public class Shop_Pop_Pop_Up : MonoBehaviour
             Shop_Pop_Pop_Up.Calculation();
         }
     }
+
     public static void Amount_Plus()
     {
         Amount_Number += Info.SellAmount;
     }
+
     public static void Amount_Minus()
     {
         Amount_Number -= Info.SellAmount;
     }
+
     class Plus : MonoBehaviour, IPointerClickHandler
     {
         public void OnPointerClick(PointerEventData eventData)
@@ -76,24 +86,28 @@ public class Shop_Pop_Pop_Up : MonoBehaviour
             Amount_Text.text = Amount_Number.ToString();
         }
     }
+
     class Minus : MonoBehaviour, IPointerClickHandler
     {
         public void OnPointerClick(PointerEventData eventData)
         {
-            if(Amount_Number > 0)
+            if (Amount_Number > 0)
             {
                 Amount_Minus();
             }
+
             Amount_Text.text = Amount_Number.ToString();
         }
     }
 
     #endregion
+
     public static void UI_Change()
     {
         Name.text = Info.Name;
         HasAmount.text = "보유 수량 : " + Info.HasAmount;
     }
+
     void Find_Child()
     {
         Name = transform.Find("Name").GetComponent<Text>();
@@ -105,6 +119,7 @@ public class Shop_Pop_Pop_Up : MonoBehaviour
 
         m_Buy_Button = transform.Find("Buy Button").gameObject;
     }
+
     private void Awake()
     {
         Insert_Component_Cancle_Panel();
@@ -112,6 +127,7 @@ public class Shop_Pop_Pop_Up : MonoBehaviour
         Insert_Component_Button();
     }
 }
+
 //상점 계산기
 public class Item_Icon : MonoBehaviour, IPointerClickHandler
 {
@@ -135,7 +151,6 @@ public class Item_Icon : MonoBehaviour, IPointerClickHandler
         Debug.Log(Info.Name);
         GetComponentInChildren<Text>().text = Info.Name;
     }
-    
 }
 
 public class Shop_Merchandise : MonoBehaviour
@@ -167,17 +182,20 @@ public class Shop_Merchandise : MonoBehaviour
     // 상점이름 이미지로 바꾸면서 Type 오브젝트 지웠으면 삭제
     void Shop_Name_Change_Ready()
     {
-        if(transform.parent.Find("Type") == null)
+        if (transform.parent.Find("Type") == null)
         {
             Debug.LogError("상점이름 이미지로 바꾸면서 Type 오브젝트 지웠으면 Shop_Name_Change() 삭제 필요");
         }
+
         My_Name = transform.parent.Find("Type").GetComponent<Text>();
     }
+
     // 상점 변경 허가 함수  각 상점 클릭버튼에서 선언
     public static void Change()
     {
         IsChange = true;
     }
+
     void Get_Part_Timer_Type()
     {
         switch (Shop.Which_Part_Timer_Type_Open)
@@ -196,7 +214,7 @@ public class Shop_Merchandise : MonoBehaviour
         }
     }
 
-   
+
     void Get_Lubricator_Type()
     {
         switch (Shop.Which_Lub_Type_Open)
@@ -230,7 +248,40 @@ public class Shop_Merchandise : MonoBehaviour
                 break;
         }
     }
-    
+    void Get_Gas_Type()
+    {
+        switch (Shop.Which_Gas_Type_Open)
+        {
+            case GAS_TYPE.GASOLINE:
+                My_Name.text = "가솔린";
+                Merchandise_Amount = Item.ArrGasoline.Length;
+                Create_Merchandise_Buttons(Item.ArrGasoline);
+                break;
+            case GAS_TYPE.DIESEL:
+                My_Name.text = "디젤";
+                Merchandise_Amount = Item.ArrDissel.Length;
+                Create_Merchandise_Buttons(Item.ArrDissel);
+                break;
+            case GAS_TYPE.ELECTRIC:
+                My_Name.text = "전기";
+                Merchandise_Amount = Item.ArrElectric.Length;
+                Create_Merchandise_Buttons(Item.ArrElectric);
+                break;
+            case GAS_TYPE.HYDROGEN:
+                My_Name.text = "수소";
+                Merchandise_Amount = Item.ArrHydrogen.Length;
+                Create_Merchandise_Buttons(Item.ArrHydrogen);
+                break;
+            case GAS_TYPE.BIO:
+                My_Name.text = "바이오";
+                Merchandise_Amount = Item.ArrBio.Length;
+                Create_Merchandise_Buttons(Item.ArrBio);
+                break;
+            default:
+                break;
+        }
+    }
+
     void Create_Merchandise_Buttons(Item_Info[] _Info)
     {
         for (int i = 0; i < Merchandise_Amount; i++)
@@ -241,6 +292,7 @@ public class Shop_Merchandise : MonoBehaviour
                 Merchandise_Pos.x = Reset_Merchandise_Pos.x;
                 Merchandise_Pos.y -= Merchandise_DisY;
             }
+
             Contents_Size_Setting();
 
             m_Merchandise = GameObject.Instantiate(Shop.Inst.Pop_Up_Merchandise);
@@ -254,12 +306,14 @@ public class Shop_Merchandise : MonoBehaviour
 
     void Reset_Object()
     {
-        for (int i = 0; i <Contents.transform.childCount ; i++)
+        for (int i = 0; i < Contents.transform.childCount; i++)
         {
             Destroy(Contents.transform.GetChild(i).gameObject);
         }
+
         Merchandise_Pos = Reset_Merchandise_Pos;
     }
+
     void Create_Merchandise()
     {
         if (true == IsChange)
@@ -274,6 +328,9 @@ public class Shop_Merchandise : MonoBehaviour
                 case SHOP_TYPE.PART_TIMER:
                     Get_Part_Timer_Type();
                     break;
+                case SHOP_TYPE.GAS:
+                    Get_Gas_Type();
+                    break;
                 default:
                     break;
             }
@@ -286,10 +343,11 @@ public class Shop_Merchandise : MonoBehaviour
     void Contents_Size_Setting()
     {
         Row = Merchandise_Amount / Col;
-        if(0 != Merchandise_Amount % Col)
+        if (0 != Merchandise_Amount % Col)
         {
             Row += 1;
         }
+
         Contents_Height = 130 + 100 * (Row - 1);
         Contents.GetComponent<RectTransform>().sizeDelta = new Vector2(0, Contents_Height);
     }
@@ -303,12 +361,12 @@ public class Shop_Merchandise : MonoBehaviour
 
         // 스크롤뷰 Content찾기
         Contents = transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
-        
+
 
         Shop_Name_Change_Ready();
     }
 
-    
+
     private void LateUpdate()
     {
         // Update 에서 처리하니까 상점 내용이 변하는게 한프레임 보임
@@ -326,15 +384,16 @@ public class Shop_Pop_Up_Panel : MonoBehaviour, IPointerClickHandler
 
 public class Shop_Pop_Up : MonoBehaviour
 {
-
     void Insert_Component_Merchandise()
     {
         transform.Find("Merchandise").gameObject.AddComponent<Shop_Merchandise>();
     }
+
     void Insert_Component_Cancle_Panel()
     {
         transform.Find("Pop_Up_Cancle_Panel").gameObject.AddComponent<Shop_Pop_Up_Panel>();
     }
+
     private void Awake()
     {
         Insert_Component_Merchandise();
@@ -343,7 +402,9 @@ public class Shop_Pop_Up : MonoBehaviour
 }
 
 #endregion
+
 #region Part_Timer
+
 public enum PART_TIMER_TYPE
 {
     //NONE 항상 마지막에 두어야함
@@ -352,9 +413,9 @@ public enum PART_TIMER_TYPE
     ZIZON,
     NONE,
 }
-public class Part_Timer_Type : MonoBehaviour,IShop_Type ,IPointerClickHandler
-{
 
+public class Part_Timer_Type : MonoBehaviour, IShop_Type, IPointerClickHandler
+{
     //메뉴 순서
     public PART_TIMER_TYPE m_Part_Timer_Type;
 
@@ -386,21 +447,24 @@ public class Part_Timer_Type : MonoBehaviour,IShop_Type ,IPointerClickHandler
                 break;
         }
     }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         Open_Pop_Up();
         Request_Shop_Type_Change();
         Select_Pop_Up_Menu();
     }
+
     void Awake()
     {
     }
 }
-public class Part_Timer_Canvas : MonoBehaviour , IShop_Canvas
+
+public class Part_Timer_Canvas : MonoBehaviour, IShop_Canvas
 {
     GameObject Part_Timer_Type = null;
 
-   
+
     public void Insert_Component_Type()
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -411,11 +475,13 @@ public class Part_Timer_Canvas : MonoBehaviour , IShop_Canvas
             Cur_Type.m_Part_Timer_Type = (PART_TIMER_TYPE)i; // 메뉴 타입 넣어줌
         }
     }
+
     public void Awake()
     {
         Part_Timer_Type = new GameObject();
         Insert_Component_Type();
     }
+
     public void LateUpdate()
     {
         if (Shop.Witch_Shop_Open != SHOP_TYPE.PART_TIMER)
@@ -423,7 +489,6 @@ public class Part_Timer_Canvas : MonoBehaviour , IShop_Canvas
             gameObject.SetActive(false);
         }
     }
-
 }
 
 public class Part_Timer_Button : MonoBehaviour, IPointerClickHandler
@@ -448,8 +513,9 @@ public enum LUBRICATOR_TYPE
     HYDROGEN,
     BIO,
     NONE,
-} 
-public class Lubricator_Type : MonoBehaviour , IShop_Type, IPointerClickHandler
+}
+
+public class Lubricator_Type : MonoBehaviour, IShop_Type, IPointerClickHandler
 {
     public LUBRICATOR_TYPE Lub_Type;
 
@@ -457,6 +523,7 @@ public class Lubricator_Type : MonoBehaviour , IShop_Type, IPointerClickHandler
     {
         Shop.m_Pop_Up.SetActive(true);
     }
+
     public void Select_Pop_Up_Menu()
     {
         switch (Lub_Type)
@@ -495,16 +562,16 @@ public class Lubricator_Type : MonoBehaviour , IShop_Type, IPointerClickHandler
         Request_Shop_Type_Change();
     }
 }
-public class Lubricator_Canvas : MonoBehaviour , IShop_Canvas
+
+public class Lubricator_Canvas : MonoBehaviour, IShop_Canvas
 {
     // 주유기 타입버튼 오브젝트 받기
     GameObject Lub_Type = null;
 
-    
 
     public void Insert_Component_Type()
     {
-        for (int i = 0; i < transform.childCount ; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
             Lub_Type = transform.GetChild(i).gameObject;
 
@@ -513,15 +580,11 @@ public class Lubricator_Canvas : MonoBehaviour , IShop_Canvas
         }
     }
 
-    
 
     public void Awake()
     {
-        
         Lub_Type = new GameObject();
         Insert_Component_Type();
-       
-
     }
 
     public void LateUpdate()
@@ -534,12 +597,119 @@ public class Lubricator_Canvas : MonoBehaviour , IShop_Canvas
 }
 
 
-public class Lubricator_Button : MonoBehaviour , IPointerClickHandler
+public class Lubricator_Button : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
         Shop.Witch_Shop_Open = SHOP_TYPE.LUBRICATOR;
         Shop.Inst.m_Lub_Shop_Canvas.SetActive(true);
+    }
+}
+
+#endregion
+
+
+#region Gas
+
+public enum GAS_TYPE
+{
+    //NONE 항상 마지막에 두어야함
+    GASOLINE,
+    DIESEL,
+    ELECTRIC,
+    HYDROGEN,
+    BIO,
+    NONE,
+}
+
+public class Gas_Type : MonoBehaviour, IShop_Type, IPointerClickHandler
+{
+    public GAS_TYPE m_Gas_Type;
+
+    public void Open_Pop_Up()
+    {
+        Shop.m_Pop_Up.SetActive(true);
+    }
+
+    public void Select_Pop_Up_Menu()
+    {
+        switch (m_Gas_Type)
+        {
+            case GAS_TYPE.GASOLINE:
+                Shop.Which_Gas_Type_Open = GAS_TYPE.GASOLINE;
+                break;
+            case GAS_TYPE.DIESEL:
+                Shop.Which_Gas_Type_Open = GAS_TYPE.DIESEL;
+                break;
+            case GAS_TYPE.ELECTRIC:
+                Shop.Which_Gas_Type_Open = GAS_TYPE.ELECTRIC;
+                break;
+            case GAS_TYPE.HYDROGEN:
+                Shop.Which_Gas_Type_Open = GAS_TYPE.HYDROGEN;
+                break;
+            case GAS_TYPE.BIO:
+                Shop.Which_Gas_Type_Open = GAS_TYPE.BIO;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void Request_Shop_Type_Change()
+    {
+        Shop_Merchandise.Change();
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Select_Pop_Up_Menu();
+        Open_Pop_Up();
+
+        // 상점 내용 변경 허가
+        Request_Shop_Type_Change();
+    }
+}
+
+public class Gas_Canvas : MonoBehaviour, IShop_Canvas
+{
+    // 주유기 타입버튼 오브젝트 받기
+    GameObject Gas_Type = null;
+
+
+    public void Insert_Component_Type()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Gas_Type = transform.GetChild(i).gameObject;
+
+            Gas_Type Cur_Type = Gas_Type.AddComponent<Gas_Type>();
+            Cur_Type.m_Gas_Type = (GAS_TYPE)i; // 메뉴 타입 넣어줌
+        }
+    }
+
+
+    public void Awake()
+    {
+        Gas_Type = new GameObject();
+        Insert_Component_Type();
+    }
+
+    public void LateUpdate()
+    {
+        if (Shop.Witch_Shop_Open != SHOP_TYPE.GAS)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+}
+
+
+public class Gas_Button : MonoBehaviour, IPointerClickHandler
+{
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Shop.Witch_Shop_Open = SHOP_TYPE.GAS;
+        Shop.Inst.m_Gas_Shop_Canvas.SetActive(true);
     }
 }
 
@@ -599,6 +769,7 @@ interface IShop_Type
     void Select_Pop_Up_Menu();
     void Request_Shop_Type_Change();
 }
+
 interface IShop_Canvas
 {
     /*  예제
@@ -638,46 +809,64 @@ interface IShop_Canvas
     }    */
 
 
-
     void Insert_Component_Type();
     void Awake();
 
     void LateUpdate();
 }
-public enum SHOP_TYPE 
+
+public enum SHOP_TYPE
 {
     NONE,
     LUBRICATOR,
     PART_TIMER,
+    GAS,
 }
 
 //상점 버튼을 위한 스크립트
 public class Shop : MonoBehaviour
 {
     static Shop m_Inst = null;
-    public static Shop Inst { get { return m_Inst; } }
+
+    public static Shop Inst
+    {
+        get { return m_Inst; }
+    }
 
     //Pop_Pop_Up
     public static GameObject m_Pop_Pop_Up = null;
+
     //Pop_Up 오브젝트 쓰려고 선언
     public static GameObject m_Pop_Up = null;
     public GameObject Pop_Up_Merchandise = null;
 
     // UI 패널 사이즈 통일을 위해.
-    public static Vector2 Main_Canvas_Size { get { return m_Main_Canvas_Size.sizeDelta; } }
+    public static Vector2 Main_Canvas_Size
+    {
+        get { return m_Main_Canvas_Size.sizeDelta; }
+    }
+
     static RectTransform m_Main_Canvas_Size;
 
     //Part_Timer
     public static PART_TIMER_TYPE Which_Part_Timer_Type_Open = PART_TIMER_TYPE.NONE;
+
     //Lubricator
     public static LUBRICATOR_TYPE Which_Lub_Type_Open = LUBRICATOR_TYPE.NONE;
+    
+    //Gas
+    public static GAS_TYPE Which_Gas_Type_Open = GAS_TYPE.NONE;
 
     //Main Menu
     public GameObject m_Lub_Shop_Canvas = null;
     public GameObject m_Part_Shop_Canvas = null;
-
+    public GameObject m_Gas_Shop_Canvas = null;
+    
     public GameObject m_Part_Timer_Button = null;
+
     public GameObject m_Lubricator_Button = null;
+    public GameObject m_Gas_Button = null;
+
     //Exit버튼에 컴포넌트 추가하기위해 삽입 ###프리팹 만들면
     public GameObject m_Shop_Exit_Button = null;
 
@@ -690,6 +879,7 @@ public class Shop : MonoBehaviour
         m_Pop_Pop_Up = m_Pop_Up.transform.Find("Pop_Pop_Up").gameObject;
         m_Pop_Pop_Up.AddComponent<Shop_Pop_Pop_Up>();
     }
+
     void Insert_Component_Pop_Up()
     {
         m_Pop_Up = transform.Find("Pop_Up").gameObject;
@@ -698,7 +888,7 @@ public class Shop : MonoBehaviour
 
     private void Awake()
     {
-        m_Inst= this;
+        m_Inst = this;
 
         //UI 패널 사이즈 통일을 위해
         m_Main_Canvas_Size = GetComponent<RectTransform>();
@@ -706,9 +896,11 @@ public class Shop : MonoBehaviour
         //Exit 버튼에 컴포넌트 추가 ###프리팹 만들면
         m_Shop_Exit_Button.AddComponent<Shop_Exit>();
 
+        m_Gas_Button.AddComponent<Gas_Button>();
         m_Lubricator_Button.AddComponent<Lubricator_Button>();
         m_Part_Timer_Button.AddComponent<Part_Timer_Button>();
 
+        m_Gas_Shop_Canvas.AddComponent<Gas_Canvas>();
         m_Lub_Shop_Canvas.AddComponent<Lubricator_Canvas>();
         m_Part_Shop_Canvas.AddComponent<Part_Timer_Canvas>();
 
@@ -716,15 +908,23 @@ public class Shop : MonoBehaviour
         Insert_Component_Pop_Up();
         Insert_Component_Pop_Pop_Up();
     }
-}
 
-public class Shop_Exit : MonoBehaviour, IPointerClickHandler
-{
-    public void OnPointerClick(PointerEventData eventData)
+
+    public class Shop_Exit : MonoBehaviour, IPointerClickHandler
     {
-        //상점캔버스 닫아서 상점에서 나가기
-        MenuScript.Shop_Canvas.SetActive(false);
-        //주유소 , 알바 선택 해서 나오는 서브창 초기화
-        Shop.Witch_Shop_Open = SHOP_TYPE.NONE;
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            //상점캔버스 닫아서 상점에서 나가기
+            MenuScript.Shop_Canvas.SetActive(false);
+            //주유소 , 알바 선택 해서 나오는 서브창 초기화
+            Shop.Witch_Shop_Open = SHOP_TYPE.NONE;
+        }
     }
 }
+
+
+/*
+참고 링크 
+유니티 오브젝트 공간 클릭 인식 방법 : https://asxpyn.tistory.com/53
+유니티 프리팹과 인스턴스 사용 내용 : https://notyu.tistory.com/35
+*/

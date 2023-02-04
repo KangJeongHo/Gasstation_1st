@@ -1,7 +1,10 @@
 using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using UnityEngine;
+using static Item;
 
 
 public class Item : MonoBehaviour
@@ -40,6 +43,13 @@ public class Item : MonoBehaviour
     #region Lubricator
     public class Lubricator : Item_Info
     {
+        int m_Installed_Amount;
+        public int Installed_Amount { get { return m_Installed_Amount; } }
+
+        public void Add_Installed_Amount(int _Amount_Number)
+        {
+            m_Installed_Amount += _Amount_Number;
+        }
         public Lubricator(string __Name, int __Value, int __SellAmount) : base(__Name, __Value, __SellAmount)
         {
         }
@@ -94,9 +104,9 @@ public class Item : MonoBehaviour
     }
     void Item_ArrBio()
     {
-        ArrBio = new Lubricator[]
-        {
-                new Lubricator("πŸ¿Ãø¿µ≠", 500, 20),
+        ArrBio = new Lubricator[] 
+        { 
+            new Lubricator("πŸ¿Ãø¿µ≠", 500, 20) 
         };
     }
 
@@ -109,7 +119,6 @@ public class Item : MonoBehaviour
         Item_ArrElectric();
         Item_ArrHydrogen();
         Item_ArrBio();
-
     }
     
 }

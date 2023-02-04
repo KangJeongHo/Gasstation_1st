@@ -64,7 +64,6 @@ public class GameDirector : MonoBehaviour
         public GameObject Menu_Cancle_Panel;
         public float Menu_Down_Speed;
         public int Menu_Distance;
-        public int Menu_Count;
         public GameObject Button;
     }
     #endregion

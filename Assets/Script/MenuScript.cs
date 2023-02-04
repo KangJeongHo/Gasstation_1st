@@ -14,6 +14,12 @@ namespace Script
     public class MenuScript : MonoBehaviour
     {
         static MenuScript Inst = null;
+        void SingleTone()
+        {
+
+            Inst = this;
+            //DontDestroyOnLoad(gameObject);
+        }
 
         // UI 패널 사이즈 통일을 위해.
         public static Vector2 Main_Canvas_Size { get { return m_Main_Canvas_Size.sizeDelta; } }
@@ -23,23 +29,20 @@ namespace Script
         public static GameObject Shop_Canvas { get { return Inst.m_Shop_Canvas; } }
         public GameObject m_Shop_Canvas = null;
 
-        #endregion
-
+        
         //메뉴 버튼에 메뉴컴포넌트 삽입하기위해 선언  ### 나중에 메뉴이미지들 프리팹 따로따로 만들면 없앨 수 있음
-        public GameObject Menu_Button = null;
+        public static GameObject Menu_Button { get { return Inst.m_Menu_Button; } }
+        public GameObject m_Menu_Button = null;
 
+        #endregion
         private void Awake()
         {
+            SingleTone();
             //UI 패널 사이즈 통일을 위해
             m_Main_Canvas_Size = GetComponent<RectTransform>();
 
-
-            Inst = this;
-        }
-        private void Start()
-        {
             //메뉴 버튼에 메뉴컴포넌트 삽입  ### 나중에 메뉴이미지들 프리팹 따로따로 만들면 없앨 수 있음
-            Menu_Button.AddComponent<Menu>();
+            m_Menu_Button.AddComponent<Menu>();
             if (GameDirector.MenuValue.Menu_Cancle_Panel == null)
             {
                 Debug.LogWarning("if (GameDirector.MenuValue.Menu_Cancle_Panel == null)");
@@ -56,14 +59,30 @@ enum MENU_LIST
 {
     SETTING,
     SHOP,
+    GROUNDS,
+    LENGTH, // 코루틴에서 루프 돌리면서 사용
 }
 
-
-
-// 상점버튼 기능 설정
-/* 상점버튼들에는 클릭함수에
+// 메뉴버튼 기능 설정
+/* 메뉴 구성 버튼들에는
  * Menu_Cancle_Panel.Menu_Exit();
  * 를 꼭 추가한다. */
+
+public class Menu_Grounds : MonoBehaviour, IPointerClickHandler
+{
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        //만들어진 부지 캔버스 열기 - 부지 캔버스는 Station 스크립트에 있음
+        Station.Instance.m_Grounds_Menu_Canvas.SetActive(true);
+        Menu_Cancle_Panel.Menu_Exit();
+        
+    }
+    void Awake()
+    {
+        // 디버깅용 ### 나중에 상점이미지 만들어 프리팹하면 지워도 됨
+        GetComponentInChildren<Text>().text = "부지";
+    }
+}
 public class Menu_Shop : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
@@ -83,6 +102,7 @@ public class Menu_Setting : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
+        Menu_Cancle_Panel.Menu_Exit();
     }
     void Awake()
     {
@@ -144,6 +164,10 @@ public class Menu : MonoBehaviour,IPointerClickHandler
         {
             InstObject.AddComponent<Menu_Shop>();
         }
+        else if (_List == MENU_LIST.GROUNDS)
+        {
+            InstObject.AddComponent<Menu_Grounds>();
+        }
     }
 
     // 메뉴 닫힘 함수
@@ -201,7 +225,7 @@ public class Menu : MonoBehaviour,IPointerClickHandler
         Menu_Count += 1;
         Pre_InstObject_Pos = InstObject.transform.localPosition;
 
-        if (Menu_Count < GameDirector.MenuValue.Menu_Count) // 메뉴 갯수만큼 반복해서 생성
+        if (Menu_Count < (int)MENU_LIST.LENGTH) // 메뉴 갯수만큼 반복해서 생성
         {
             StartCoroutine(Open_Menu());
         }

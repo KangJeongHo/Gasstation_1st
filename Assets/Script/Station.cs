@@ -1068,6 +1068,53 @@ public class Buy_Station : MonoBehaviour
     }
 }
 
+public class Main_Station : MonoBehaviour
+{
+    Transform[] Children;
+
+    void Station_Activate()
+    {
+        for (int i = 0; i < PlayerScript.Instance.m_Grounds.Length; i++)
+        {
+            if (PlayerScript.Instance.m_Grounds[i].IsOn == true
+                && Children[i].gameObject.activeSelf == false)
+            {
+                Children[i].gameObject.SetActive(true);
+            }
+        }
+       
+    }
+    void Insert_Ground_Position()
+    {
+        if (Children.Length != Station.Grounds.Length)
+        {
+            Debug.LogError("        if(Children.Length != Station.Grounds.Length)\r\n");
+        }
+        for (int i = 0; i < Station.Grounds.Length; i++)
+        {
+            Station.Grounds[i].Insert_Ground_Position(Children[i].position);
+        }
+    } // 만들어논 오브젝트 위치를 m_Groonds 에 넣으면 Player가 Awake 로 가져감
+
+    void Get_Station()
+    {
+        Children = new Transform[transform.childCount];
+        for (int i = 0; i < Children.Length; i++)
+        {
+            Children[i] = transform.GetChild(i);
+        }
+    } // Station(=자식) 가져옴
+
+    private void Update()
+    {
+        Station_Activate(); // 게임 시작때 활성화 하고, 게임 중에는 부지를 구매하면 부지 활성화
+    }
+    private void Awake()
+    {
+        Get_Station();
+        Insert_Ground_Position();
+    }
+}
 public class Station : MonoBehaviour
 {
     private static Station _instance;  //싱글톤
@@ -1110,30 +1157,8 @@ public class Station : MonoBehaviour
     public GameObject m_Main_Station; // 주유기 설치 되고 나면 보이는 칸 (부모 오브젝트)
     static Grounds[] m_Grounds; // 부지 설정
     public static Grounds[] Grounds { get { return m_Grounds; } } // 플레이어, Buy_Station에게 부지 정보 보냄
-    Transform[] m_Ground_Transform; // 부지 위치 가져오기
 
     
-    
-    void Insert_Ground_Position()
-    {
-        if(m_Ground_Transform.Length != m_Grounds.Length)
-        {
-            Debug.LogError("        if(m_Ground_Transform.Length != m_Grounds.Length)\r\n");
-        }
-        for (int i = 0; i < m_Grounds.Length; i++)
-        {
-            m_Grounds[i].Insert_Ground_Position(m_Ground_Transform[i].position);
-        }
-    } // 만들어논 오브젝트 위치를 m_Groonds 에 넣어서 Playter에게 보냄
-
-    void Get_Ground_Transform()
-    {
-        m_Ground_Transform = new Transform[m_Main_Station.transform.childCount];
-        for (int i = 0; i < m_Main_Station.transform.childCount; i++)
-        {
-            m_Ground_Transform[i] = m_Main_Station.transform.GetChild(i);
-        }
-    } //부지 위치 가져옴 (Main_Station 자식들 위치)
 
     void Setting_Grounds()
     {
@@ -1154,15 +1179,14 @@ public class Station : MonoBehaviour
     void Child_Setting()
     {
         m_Buy_Station.AddComponent<Buy_Station>();
+        m_Main_Station.AddComponent<Main_Station>();
         m_Grounds_Menu_Canvas.AddComponent<Grounds_Menu_Canvas>();
     } //엔진에서 받아와서 넣어줌
 
     private void Awake()
     {
         SingleTone();
-        Child_Setting();
-        Get_Ground_Transform(); //부지 오브젝트 위치 가져옴
         Setting_Grounds(); //부지 설정
-        Insert_Ground_Position(); // 부지 위치 정보 입력
+        Child_Setting();
     }
 }

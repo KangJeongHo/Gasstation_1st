@@ -1,55 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
+using GoogleSheetsToUnity;
+using UnityEngine.Events;
 
-    /// 플레이어 움직임에 따른 구름 생성과 움직임 조작
-    /// 플레이어 이동, 시간 경과 후 출현하는 오브젝트
+
+/// 플레이어 움직임에 따른 구름 생성과 움직임 조작
+/// 플레이어 이동, 시간 경과 후 출현하는 오브젝트
+
+public class GameGenerator : MonoBehaviour
+{
+    //해당 내용은 시트 호출을 위해 사용하는 내용들
+    private string id = "1RgsaoZoHw5pxwQVwIlxV_H8knM3nIw63g98mXzcY9Cc";
+    private string CarSheetName = "CarDatas";
+
+    void UpdateStats(UnityAction<GstuSpreadSheet> callback, bool mergedCells = false)
+    {
+        SpreadsheetManager.Read(new GSTU_Search(id, CarSheetName), callback, mergedCells);
+    }
     
-//[System.Serializable]
-public class Car
-{
-    public string Name;
-    public string GasType;
-    public int ChargeTime;
-    public int WaitPatience;
-    public int Satisfaction; // 만족도
-    public int ZenProbability; // 차들끼리의 등장 확률 (이거를 주유기에서 조절할지 차 클래스에서 조절할지 고민해봐야 할듯.)
-    public List<int> KindOf = new List<int>();
 
-    public Car(string name, string gasType, int chargeTime, int waitPatience, int satisfaction, int zenProbability)
-    {
-    }
 }
 
-//[System.Serializable]
-public class CarKindOf
-{
-    public string Name;
-    public string GasType;
-    public int ChargeTime;
-    public int WaitPatience;
-    public int Satisfaction; // 만족도
-    public int ZenProbability; // 차들끼리의 등장 확률 (이거를 주유기에서 조절할지 차 클래스에서 조절할지 고민해봐야 할듯.)
+/*
+ CarName : char
+ CarGasAmount : int
+ CarGasType : enum
+ CarLimitTIme : int
+ CarSatisfaction : int
+ CarZenProbability : int
+ CarOpenLevel : int
+ CarImage : string(?) / 바로 불러올 수 있는지 알아보는중.
 
-    public CarKindOf(string name, string gasType, int chargeTime, int waitPatience, int satisfaction,
-        int zenProbability)
-    {
-    }
-}
-
-    public class GameGenerator : MonoBehaviour
-    {
-        public List<Car> CarList = new List<Car>();
-
-
-        // IEnumerator Start()
-        // {
-        //     
-        // }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
+*/

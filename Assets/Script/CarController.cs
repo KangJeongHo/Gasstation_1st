@@ -31,6 +31,7 @@ public class CarController : MonoBehaviour
     public GameObject RandomCars; // 주유기 프리팹 소환하기 위한 오브젝트 선언
     private GameObject carInstance1 = null;
     string[] Cars = { "RedCar", "BlueCar", "GreenCar", "YellowCar" };
+    
 
     void Start()
     {
@@ -107,6 +108,12 @@ public class CarController : MonoBehaviour
         carInstance1 = null;
         goto RepeatCarSpawn;
     }
+
+    #region CarDateSheets
+
+    
+
+    #endregion
 }
 
 

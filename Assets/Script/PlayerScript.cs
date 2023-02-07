@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class PlayerScript : MonoBehaviour
 {
-    private static PlayerScript _instance;  //�̱���
+    private static PlayerScript _instance;  //싱글톤
     public static PlayerScript Instance
     {
         get
@@ -18,21 +18,21 @@ public class PlayerScript : MonoBehaviour
 
                 if (_instance == null)
                 {
-                    Debug.Log("�̱��� ������Ʈ ����");
+                    Debug.Log("싱글톤 오브젝트 없음");
                 }
             }
 
             return _instance;
         }
-    }  //�̱���
+    }  //싱글톤
 
-    // ���� ��
+    // 가진 돈
     public double m_Money = 1000000;
     [HideInInspector]
     public Grounds[] m_Grounds = null;
 
     
-    // Station ���� ���� ���� ������
+    // Station 에서 부지 정보 가져옴
     void Get_Grounds_Info_From_Station()
     {
         m_Grounds = new Grounds[Station.Grounds.Length];
@@ -50,7 +50,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-    } // �̱���
+    } // 싱글톤
     private void Awake()
     {
         SingleTone();

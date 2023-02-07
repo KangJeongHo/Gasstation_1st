@@ -10,7 +10,8 @@ using Random = System.Random;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-public class TestData : ScriptableObject
+
+public class DataFromSheetsTools : ScriptableObject
 {
     public string associatedSheet = "";
     public string associatedWorksheet = "";
@@ -79,22 +80,34 @@ public class TestData : ScriptableObject
                 }
             }
         }
-
+        /*
         Debug.Log($"{name}의 정보 차량 이름 :{CarName} 주유 희망 량 :{CarGasAmountRand} 차량 인내심 시간 :{CarLimitTimeRand}" +
                   $" 차량 만족도 : {CarSatisfactionRand} 차량 등장 확률 : {CarZenProbability} 차량 등장 레벨 : {CarOpenLevel}" +
                   $" 차량 유종 : {CarGasType} 차량 사진 : {CarImage}");
+        */
+        
+        
+        Debug.Log(name);
     }
 
 }
-
-[CustomEditor(typeof(TestData))]
-public class DataEditor : Editor
+public class DataFromSheets : MonoBehaviour
 {
-    TestData data;
+    private void Start()
+    {
+
+        //DataFromSheetsTools;
+    }
+}
+
+[CustomEditor(typeof(DataFromSheetsTools))]
+public class DataFromSheetsEditor : Editor
+{
+    DataFromSheetsTools data;
 
     void OnEnable()
     {
-        data = (TestData)target;
+        data = (DataFromSheetsTools)target;
     }
 
     public override void OnInspectorGUI()

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26b098d2f15d8d544a3b286d97986e20, type: 3}
-  m_Name: TestData
+  m_Name: DataFromSheetsBox
   m_EditorClassIdentifier: 
   associatedSheet: 1RgsaoZoHw5pxwQVwIlxV_H8knM3nIw63g98mXzcY9Cc
   associatedWorksheet: CarDatas

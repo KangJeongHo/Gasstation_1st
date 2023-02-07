@@ -6,10 +6,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-    /// 게임 규칙 및 정보 담김
+/// 게임 규칙 및 정보 담김
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
+
     public static GameManager Instance
     {
         get
@@ -49,8 +50,20 @@ public class GameManager : MonoBehaviour
         lubCount0++;
         Debug.Log("(1이면 활성화)현재 주유기 설치 상태 활성화 : " + lubCount0);
     }
-
     
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+ 
+    }
+    
+    #region Dictionary
+
     void lubDictionary()
     {
         var lubDatas = new Dictionary<string, Dictionary<string, string>>();
@@ -118,6 +131,8 @@ public class GameManager : MonoBehaviour
         carDatas.Add("자동차", car3);
         carDatas.Add("자동차", car4);
     }
+
+    #endregion
 }
 
 

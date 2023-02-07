@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class PlayerScript : MonoBehaviour
 {
-    private static PlayerScript _instance;  //½Ì±ÛÅæ
+    private static PlayerScript _instance;  //ì‹±ê¸€í†¤
     public static PlayerScript Instance
     {
         get
@@ -18,21 +18,21 @@ public class PlayerScript : MonoBehaviour
 
                 if (_instance == null)
                 {
-                    Debug.Log("½Ì±ÛÅæ ¿ÀºêÁ§Æ® ¾øÀ½");
+                    Debug.Log("ì‹±ê¸€í†¤ ì˜¤ë¸Œì íŠ¸ ì—†ìŒ");
                 }
             }
 
             return _instance;
         }
-    }  //½Ì±ÛÅæ
+    }  //ì‹±ê¸€í†¤
 
-    // °¡Áø µ·
+    // ê°€ì§„ ëˆ
     public double m_Money = 1000000;
     [HideInInspector]
     public Grounds[] m_Grounds = null;
 
     
-    // Station ¿¡¼­ ºÎÁö Á¤º¸ °¡Á®¿È
+    // Station ì—ì„œ ë¶€ì§€ ì •ë³´ ê°€ì ¸ì˜´
     void Get_Grounds_Info_From_Station()
     {
         m_Grounds = new Grounds[Station.Grounds.Length];
@@ -50,7 +50,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-    } // ½Ì±ÛÅæ
+    } // ì‹±ê¸€í†¤
     private void Awake()
     {
         SingleTone();

@@ -1,4 +1,4 @@
-using Newtonsoft.Json.Linq;
+ï»¿using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -11,19 +11,19 @@ public class Item : MonoBehaviour
 {
     
 
-    // »ó¼Ó½Ã »ı¼ºÀÚ¿¡ base ³Ö¾îÁÖ¾î¾ß ÇÔ
+    // ìƒì†ì‹œ ìƒì„±ìì— base ë„£ì–´ì£¼ì–´ì•¼ í•¨
     public class Item_Info
     {
-        //¾ÆÀÌÅÛÀÌ¸§
+        //ì•„ì´í…œì´ë¦„
         string m_Name;
         public string Name { get { return m_Name; } }
-        //ÆÇ¸Å°¡°İ
+        //íŒë§¤ê°€ê²©
         int m_Value;
         public int Value { get { return m_Value; } }
-        //±âº» ÆÇ¸Å ¼ö·®
+        //ê¸°ë³¸ íŒë§¤ ìˆ˜ëŸ‰
         int m_SellAmount;
         public int SellAmount { get { return m_SellAmount; } }
-        //°¡Áö°í ÀÖ´Â ¼ö·®
+        //ê°€ì§€ê³  ìˆëŠ” ìˆ˜ëŸ‰
         int m_HasAmount;
         public int HasAmount { get { return m_HasAmount; } }
 
@@ -64,16 +64,16 @@ public class Item : MonoBehaviour
     {
         ArrGasoline = new Lubricator[]
         {
-                new Lubricator("°¡¼Ö¸°", 500, 50),
-                new Lubricator("°¡¼Ö¸°2", 1500, 50),
-                new Lubricator("°¡¼Ö¸°3", 2500, 50),
-                new Lubricator("°¡¼Ö¸°4", 3500, 50),
-                new Lubricator("°¡¼Ö¸°5", 4500, 50),
-                new Lubricator( "°¡¼Ö¸°6", 5500, 50),
-                new Lubricator( "°¡¼Ö¸°7", 6500, 50),
-                new Lubricator( "°¡¼Ö¸°8", 7500, 50),
-                new Lubricator( "°¡¼Ö¸°9", 8500, 50),
-                new Lubricator( "°¡¼Ö¸°10", 9500, 50),
+                new Lubricator("ê°€ì†”ë¦°", 500, 50),
+                new Lubricator("ê°€ì†”ë¦°2", 1500, 50),
+                new Lubricator("ê°€ì†”ë¦°3", 2500, 50),
+                new Lubricator("ê°€ì†”ë¦°4", 3500, 50),
+                new Lubricator("ê°€ì†”ë¦°5", 4500, 50),
+                new Lubricator( "ê°€ì†”ë¦°6", 5500, 50),
+                new Lubricator( "ê°€ì†”ë¦°7", 6500, 50),
+                new Lubricator( "ê°€ì†”ë¦°8", 7500, 50),
+                new Lubricator( "ê°€ì†”ë¦°9", 8500, 50),
+                new Lubricator( "ê°€ì†”ë¦°10", 9500, 50),
         };
     }
 
@@ -81,32 +81,32 @@ public class Item : MonoBehaviour
     {
         ArrDissel = new Lubricator[]
         {
-                new Lubricator("µğÁ©", 500, 20),
-                new Lubricator("µğÁ©2", 1500, 50),
-                new Lubricator("µğÁ©3", 2500, 40),
-                new Lubricator("µğÁ©4", 3500, 50),
-                new Lubricator("µğÁ©5", 4500, 10),
+                new Lubricator("ë””ì ¤", 500, 20),
+                new Lubricator("ë””ì ¤2", 1500, 50),
+                new Lubricator("ë””ì ¤3", 2500, 40),
+                new Lubricator("ë””ì ¤4", 3500, 50),
+                new Lubricator("ë””ì ¤5", 4500, 10),
         };
     }
     void Item_ArrElectric()
     {
         ArrElectric = new Lubricator[]
         {
-                new Lubricator("Àü±â¿ä", 500, 20),
+                new Lubricator("ì „ê¸°ìš”", 500, 20),
         };
     }
     void Item_ArrHydrogen()
     {
         ArrHydrogen = new Lubricator[]
         {
-                new Lubricator("¼ö¼Ò´Â ¼ö¼Ò¼ö¼Ò", 500, 20),
+                new Lubricator("ìˆ˜ì†ŒëŠ” ìˆ˜ì†Œìˆ˜ì†Œ", 500, 20),
         };
     }
     void Item_ArrBio()
     {
         ArrBio = new Lubricator[] 
         { 
-            new Lubricator("¹ÙÀÌ¿Àµ­", 500, 20) 
+            new Lubricator("ë°”ì´ì˜¤ë…", 500, 20) 
         };
     }
 

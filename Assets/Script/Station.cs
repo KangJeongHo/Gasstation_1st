@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,33 +10,33 @@ using Unity.Burst.CompilerServices;
 using static Item;
 using UnityEngine.UI;
 
-// Station¿¡¼­ ¼±¾ğµÇ¾î ÇÃ·¹ÀÌ¾î°¡ ¹è¿­·Î ¼ÒÀ¯ÇÔ
-// ºÎÁö À§Ä¡´Â station ¿¡¼­ Àû¿ë ground¿¡´Â number¸¸ number·Î ½ºÅ×ÀÌ¼Ç¿¡¼­ ÀÚ½ÄÀ¸·ÎÃ£´Â´Ù (³ªÁß¿¡ ÆĞÄ¡·Î ºÎÁö À§Ä¡°¡ º¯°æµÉ °ÍÀ» ´ëºñ)
+// Stationì—ì„œ ì„ ì–¸ë˜ì–´ í”Œë ˆì´ì–´ê°€ ë°°ì—´ë¡œ ì†Œìœ í•¨
+// ë¶€ì§€ ìœ„ì¹˜ëŠ” station ì—ì„œ ì ìš© groundì—ëŠ” numberë§Œ numberë¡œ ìŠ¤í…Œì´ì…˜ì—ì„œ ìì‹ìœ¼ë¡œì°¾ëŠ”ë‹¤ (ë‚˜ì¤‘ì— íŒ¨ì¹˜ë¡œ ë¶€ì§€ ìœ„ì¹˜ê°€ ë³€ê²½ë  ê²ƒì„ ëŒ€ë¹„)
 public class Grounds
 {
-    // ÀÌ ºÎÁö¸¦ È¹µæ Çß´Â°¡?
+    // ì´ ë¶€ì§€ë¥¼ íšë“ í–ˆëŠ”ê°€?
     bool m_IsOn = false;                           
     public bool IsOn { get { return m_IsOn; } }
-    //ºÎÁö À§Ä¡
+    //ë¶€ì§€ ìœ„ì¹˜
     Vector3 m_Position;
     public Vector3 Position { get { return m_Position; } }
-    // ºÎÁö °¡°İ
+    // ë¶€ì§€ ê°€ê²©
     int m_Value = 0;                                
     public int Value { get { return m_Value; } }
-    // ¼³Ä¡µÈ ÁÖÀ¯±â
+    // ì„¤ì¹˜ëœ ì£¼ìœ ê¸°
     Item.Lubricator m_Installed_Lub = null;                
     public Item.Lubricator Installed_Lub { get { return m_Installed_Lub; } }
-    // ÁÖÀ¯±â  ¼³Ä¡ - station¿¡¼­ Ã³¸®
+    // ì£¼ìœ ê¸°  ì„¤ì¹˜ - stationì—ì„œ ì²˜ë¦¬
     internal void Install_Lub(Item.Lubricator _Lubricator) 
     {
         m_Installed_Lub = _Lubricator;
     }
-    // ºÎÁö È¹µæ½Ã Àû¿ë
+    // ë¶€ì§€ íšë“ì‹œ ì ìš©
     internal void On_Grounds() 
     {
         m_IsOn = true;
     }
-    //ºÎÁö À§Ä¡ Àû¿ë
+    //ë¶€ì§€ ìœ„ì¹˜ ì ìš©
     internal void Insert_Ground_Position( Vector3 _Position)
     {
         m_Position= _Position;
@@ -75,11 +75,11 @@ public class Lub_Inventory_Install_Button : MonoBehaviour, IPointerClickHandler
         {
             Lub_Index = Array.FindIndex(Lub_Inventory.Arr_Cur_Lub, x => x == Sellected_Grounds.Installed_Lub);
             Lub_Inventory.Arr_Cur_Lub[Lub_Index].Add_Installed_Amount(-1);
-        } // ÀÌ¹Ì ¼³Ä¡µÇ¾îÀÖ´Â ÁÖÀ¯±â Ä¡¿ì°í - Change
+        } // ì´ë¯¸ ì„¤ì¹˜ë˜ì–´ìˆëŠ” ì£¼ìœ ê¸° ì¹˜ìš°ê³  - Change
         Lub_Index = Array.FindIndex(Lub_Inventory.Arr_Cur_Lub, x => x == Lub_Inventory.Cur_Lub);
         Lub_Inventory.Arr_Cur_Lub[Lub_Index].Add_Installed_Amount(1);
         Sellected_Grounds.Install_Lub(Lub_Inventory.Cur_Lub);
-    } // ¼³Ä¡µÈ ¼ö ÇÏ³ª ´Ã¸®±â
+    } // ì„¤ì¹˜ëœ ìˆ˜ í•˜ë‚˜ ëŠ˜ë¦¬ê¸°
     public void OnPointerClick(PointerEventData eventData)
     {
         Sellected_Grounds = PlayerScript.Instance.m_Grounds[Grounds_Menu_Canvas.Sellected_Grounds_Index];
@@ -102,7 +102,7 @@ public enum LUB_INVENTORY_INSTALL_POP_UP
 public class Lub_Inventory_Install_Pop_Up : MonoBehaviour
 {
     GameObject Cancle_Panel;
-    TMP_Text Text; // (ÁÖÀ¯±â)¸¦ ¼³Ä¡ÇÏ½Ã°Ú½À´Ï±î?
+    TMP_Text Text; // (ì£¼ìœ ê¸°)ë¥¼ ì„¤ì¹˜í•˜ì‹œê² ìŠµë‹ˆê¹Œ?
     GameObject Install_Button;
 
     void Set_Child()
@@ -128,7 +128,7 @@ public class Lub_Inventory_Install_Pop_Up : MonoBehaviour
     {
         if (Lub_Inventory.Cur_Lub.Name != null)
         {
-            Text.text = Lub_Inventory.Cur_Lub.Name + "¸¦" + "\n" + "¼³Ä¡ÇÏ½Ã°Ú½À´Ï±î?";
+            Text.text = Lub_Inventory.Cur_Lub.Name + "ë¥¼" + "\n" + "ì„¤ì¹˜í•˜ì‹œê² ìŠµë‹ˆê¹Œ?";
         }
     }
     private void Awake()
@@ -163,9 +163,9 @@ public class Lub_Inventory_Button_In_Scroll : MonoBehaviour, IPointerClickHandle
     void Start()
     {
         Name.text = My_Lub.Name;
-        Has_Amount.text = "º¸À¯ : " + My_Lub.HasAmount;
-        Install_Available_Amount.text = "¼³Ä¡°¡´É : " + (My_Lub.HasAmount - My_Lub.Installed_Amount);
-        Button_Disable(); // ¼³Ä¡°¡´É¼ö 0 ÀÌ¸é µğÆúÆ®
+        Has_Amount.text = "ë³´ìœ  : " + My_Lub.HasAmount;
+        Install_Available_Amount.text = "ì„¤ì¹˜ê°€ëŠ¥ : " + (My_Lub.HasAmount - My_Lub.Installed_Amount);
+        Button_Disable(); // ì„¤ì¹˜ê°€ëŠ¥ìˆ˜ 0 ì´ë©´ ë””í´íŠ¸
     }
     void Awake()
     {
@@ -184,26 +184,26 @@ public class Lub_Inventory_Button_In_Scroll : MonoBehaviour, IPointerClickHandle
 }
 public class Lub_Inventory_Button_In_Main : MonoBehaviour, IPointerClickHandler
 {
-    public LUBRICATOR_TYPE Lub_Type; //ÀÎº¥Åä¸®¿¡¼­ add ·Î Ãß°¡ÇØÁÜ
+    public LUBRICATOR_TYPE Lub_Type; //ì¸ë²¤í† ë¦¬ì—ì„œ add ë¡œ ì¶”ê°€í•´ì¤Œ
     TMP_Text Type;
     void Set_Text()
     {
         switch (Lub_Type)
         {
             case LUBRICATOR_TYPE.GASOLINE:
-                Type.text = "ÈÖ¹ßÀ¯";
+                Type.text = "íœ˜ë°œìœ ";
                 break;
             case LUBRICATOR_TYPE.DIESEL:
-                Type.text = "°æÀ¯";
+                Type.text = "ê²½ìœ ";
                 break;
             case LUBRICATOR_TYPE.ELECTRIC:
-                Type.text = "Àü±â";
+                Type.text = "ì „ê¸°";
                 break;
             case LUBRICATOR_TYPE.HYDROGEN:
-                Type.text = "¼ö¼Ò";
+                Type.text = "ìˆ˜ì†Œ";
                 break;
             case LUBRICATOR_TYPE.BIO:
-                Type.text = "¹ÙÀÌ¿À";
+                Type.text = "ë°”ì´ì˜¤";
                 break;
             default:
                 break;
@@ -215,7 +215,7 @@ public class Lub_Inventory_Button_In_Main : MonoBehaviour, IPointerClickHandler
     }
     void Start()
     {
-        Set_Text(); // Awake ¿¡¼­ Ã³¸®ÇÏ¸é Lub_Type¿¡ °ª³Ö¾îÁÖ±âÀü¿¡ ½áÁ®¼­ ¿À·ù
+        Set_Text(); // Awake ì—ì„œ ì²˜ë¦¬í•˜ë©´ Lub_Typeì— ê°’ë„£ì–´ì£¼ê¸°ì „ì— ì¨ì ¸ì„œ ì˜¤ë¥˜
     }
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -233,14 +233,14 @@ public class Lub_Inventory_Cancle_Panel : MonoBehaviour, IPointerClickHandler
 }
 public class Lub_Inventory : MonoBehaviour
 {
-    // °í¸¥ ÁÖÀ¯±â Å¸ÀÔ
+    // ê³ ë¥¸ ì£¼ìœ ê¸° íƒ€ì…
     static LUBRICATOR_TYPE m_Lub_Type; 
     public static LUBRICATOR_TYPE Lub_Type { get { return m_Lub_Type; } }
     public static LUBRICATOR_TYPE Set_Lub_Type { set { m_Lub_Type = value; } }
 
-    public static bool Is_Change = false; //ÈÖ¹ßÀ¯, °æÀ¯ .. ´­·¶À»¶§ ¸Ş´º º¯ÇÏ´Â Æ®¸®°Å
+    public static bool Is_Change = false; //íœ˜ë°œìœ , ê²½ìœ  .. ëˆŒë €ì„ë•Œ ë©”ë‰´ ë³€í•˜ëŠ” íŠ¸ë¦¬ê±°
 
-    //°í¸¥ ÁÖÀ¯±â
+    //ê³ ë¥¸ ì£¼ìœ ê¸°
     static Lubricator m_Cur_Lub;
     public static Lubricator Cur_Lub { get { return m_Cur_Lub; } }
     public static Lubricator Set_Cur_Lub { set { m_Cur_Lub = value; } }
@@ -251,11 +251,11 @@ public class Lub_Inventory : MonoBehaviour
     public static LUB_INVENTORY_INSTALL_POP_UP Set_Lub_Inventory_Pop_Sellect { set { m_Lub_Inventory_Pop_Sellect = value; } }
 
     GameObject Main_Button;
-    Transform Button_In_Main; // ÈÖ¹ßÀ¯ , °æÀ¯ ...
+    Transform Button_In_Main; // íœ˜ë°œìœ  , ê²½ìœ  ...
 
-    GameObject Content; // ½ºÅ©·Ñºä ³»¿ë
+    GameObject Content; // ìŠ¤í¬ë¡¤ë·° ë‚´ìš©
     RectTransform Content_Size;
-    Transform Button_In_Scroll; // °í±Ş ÁÖÀ¯±â, Áß±Ş ÁÖÀ¯±â ...
+    Transform Button_In_Scroll; // ê³ ê¸‰ ì£¼ìœ ê¸°, ì¤‘ê¸‰ ì£¼ìœ ê¸° ...
     static Lubricator[] m_Arr_Cur_Lub;
     public static Lubricator[] Arr_Cur_Lub { get { return m_Arr_Cur_Lub; } }
 
@@ -281,7 +281,7 @@ public class Lub_Inventory : MonoBehaviour
         {
             Is_Change = false;
             Get_Cur_Lub();
-            Content.transform.localPosition = Vector3.zero; // ½ºÅ©·Ñ À§Ä¡ ÃÊ±âÈ­
+            Content.transform.localPosition = Vector3.zero; // ìŠ¤í¬ë¡¤ ìœ„ì¹˜ ì´ˆê¸°í™”
 
             Inst_Pos = Button_In_Scroll.localPosition;
             Inst_Size = Button_In_Scroll.localScale;
@@ -323,7 +323,7 @@ public class Lub_Inventory : MonoBehaviour
             default:
                 break;
         }
-    } // ÇöÀç ´­¸° ¹öÆ°¿¡ µû¶ó ÁÖÀ¯±â Á¾·ù ¹Ş¾Æ¿È , À§¿¡ÀÖ´Â Set_Content() ¿¡¼­ »ç¿ë
+    } // í˜„ì¬ ëˆŒë¦° ë²„íŠ¼ì— ë”°ë¼ ì£¼ìœ ê¸° ì¢…ë¥˜ ë°›ì•„ì˜´ , ìœ„ì—ìˆëŠ” Set_Content() ì—ì„œ ì‚¬ìš©
     void Set_Main_Button()
     {
         Button_In_Main.AddComponent<Lub_Inventory_Button_In_Main>().Lub_Type = LUBRICATOR_TYPE.GASOLINE;
@@ -348,10 +348,10 @@ public class Lub_Inventory : MonoBehaviour
         m_Lub_Install_Pop_Up = transform.Find("Lub Install Pop").gameObject;
         m_Lub_Install_Pop_Up.AddComponent<Lub_Inventory_Install_Pop_Up>();
         Main_Button = transform.Find("Main Button").gameObject;
-        Button_In_Main = Main_Button.transform.GetChild(0); // ¿£Áø¿¡ ¸¸µé¾î³õÀº Ã¹¹øÂ° ¹öÆ° °¡Á®¿È , ÀÌ°Å·Î º¹»çÇØ¼­ ³ª¸ÓÁö ¹öÆ° ¸¸µç´Ù
+        Button_In_Main = Main_Button.transform.GetChild(0); // ì—”ì§„ì— ë§Œë“¤ì–´ë†“ì€ ì²«ë²ˆì§¸ ë²„íŠ¼ ê°€ì ¸ì˜´ , ì´ê±°ë¡œ ë³µì‚¬í•´ì„œ ë‚˜ë¨¸ì§€ ë²„íŠ¼ ë§Œë“ ë‹¤
         Content = transform.Find("Scroll View").GetChild(0).GetChild(0).gameObject;
         Content_Size = Content.GetComponent<RectTransform>();
-        Button_In_Scroll = Content.transform.GetChild(0); // ¿£Áø¿¡ ¸¸µé¾î ³õÀº Ã¹¹ø¤Š ½ºÅ©·Ñ ¹öÆ°
+        Button_In_Scroll = Content.transform.GetChild(0); // ì—”ì§„ì— ë§Œë“¤ì–´ ë†“ì€ ì²«ë²ˆì¨° ìŠ¤í¬ë¡¤ ë²„íŠ¼
     }
     void Exit_Me()
     {
@@ -366,7 +366,7 @@ public class Lub_Inventory : MonoBehaviour
     void Pop_Up_Reset()
     {
         m_Lub_Install_Pop_Up.SetActive(false);
-    } // Á¾·áµÇ¸é ÆË¾÷ ²ô±â
+    } // ì¢…ë£Œë˜ë©´ íŒì—… ë„ê¸°
     private void Awake()
     {
         Set_Child();
@@ -388,10 +388,10 @@ public class Lub_Change_Store_Button : MonoBehaviour, IPointerClickHandler
     Grounds Sellected_Grounds;
     public void OnPointerClick(PointerEventData eventData)
     {
-        Sellected_Grounds = PlayerScript.Instance.m_Grounds[Grounds_Menu_Canvas.Sellected_Grounds_Index]; // ¼±ÅÃµÈ ºÎÁö ºÒ·¯¿À°í
-        Sellected_Grounds.Installed_Lub.Add_Installed_Amount(-1); // ±× ÁÖÀ¯±âÀÇ ¼³Ä¡µÇ¾îÀÖ´Â °¹¼ö ÇÏ³ª •û°í
-        Sellected_Grounds.Install_Lub(null); //ºÎÁö¿¡ ¼³Ä¡µÈ ÁÖÀ¯±â ¾øÀ½À¸·Î ¹Ù²Ù°í
-        Grounds_Menu_Canvas.Set_Lub_Change_Sellect = ON_OFF.OFF; //ÆË¾÷´İ°í
+        Sellected_Grounds = PlayerScript.Instance.m_Grounds[Grounds_Menu_Canvas.Sellected_Grounds_Index]; // ì„ íƒëœ ë¶€ì§€ ë¶ˆëŸ¬ì˜¤ê³ 
+        Sellected_Grounds.Installed_Lub.Add_Installed_Amount(-1); // ê·¸ ì£¼ìœ ê¸°ì˜ ì„¤ì¹˜ë˜ì–´ìˆëŠ” ê°¯ìˆ˜ í•˜ë‚˜ ëº´ê³ 
+        Sellected_Grounds.Install_Lub(null); //ë¶€ì§€ì— ì„¤ì¹˜ëœ ì£¼ìœ ê¸° ì—†ìŒìœ¼ë¡œ ë°”ê¾¸ê³ 
+        Grounds_Menu_Canvas.Set_Lub_Change_Sellect = ON_OFF.OFF; //íŒì—…ë‹«ê³ 
     }
 }
 
@@ -401,7 +401,7 @@ public class Lub_Change_Move_button : MonoBehaviour, IPointerClickHandler
     {
         Grounds_Menu_Canvas.Set_Ground_Menu_Sellect = GROUNDS_MAIN_POP_UP_SELLECT.LUB_MOVE;
         Grounds_Menu_Canvas.Set_Move_Grounds_Index = Grounds_Menu_Canvas.Sellected_Grounds_Index;
-        Buy_Station.Reset_Grounds(); // Buy_Station ±ôºıÀÌ´Â°Å ÃÊ±âÈ­
+        Buy_Station.Reset_Grounds(); // Buy_Station ê¹œë¹¡ì´ëŠ”ê±° ì´ˆê¸°í™”
         Grounds_Menu_Canvas.Set_Lub_Change_Sellect = ON_OFF.OFF;
     }
 }
@@ -529,7 +529,7 @@ public class Buy_Grounds_Buy_Button : MonoBehaviour, IPointerClickHandler
         Value = transform.GetChild(0).GetComponent<TMP_Text>();
         if (PlayerScript.Instance.m_Grounds == null)
         {
-            Debug.Log("¹ö±× ¤µ¤¡¶÷Áö");
+            Debug.Log("ë²„ê·¸ ã……ã„±ëŒì§€");
         }
         Sellected_Grounds = PlayerScript.Instance.m_Grounds[Grounds_Menu_Canvas.Sellected_Grounds_Index];
         Value.text = Sellected_Grounds.Value.ToString();
@@ -582,7 +582,7 @@ public class Buy_Grounds_Pop_Up : MonoBehaviour
     }
     private void OnEnable()
     {
-        m_Gold_Text.text = "º¸À¯±İ¾× : " + PlayerScript.Instance.m_Money;
+        m_Gold_Text.text = "ë³´ìœ ê¸ˆì•¡ : " + PlayerScript.Instance.m_Money;
     }
     private void LateUpdate()
     {
@@ -590,9 +590,9 @@ public class Buy_Grounds_Pop_Up : MonoBehaviour
     }
 }
 
-#endregion //Buy Grounds Pop Up ºÎÁö¸¦ ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?
+#endregion //Buy Grounds Pop Up ë¶€ì§€ë¥¼ êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?
 
-//ºÎÁö±¸¸Å ÁÖÀ¯±â ¼³Á¤ ¼­·Î º¯°æ ÇÏ´Â ¹öÆ°
+//ë¶€ì§€êµ¬ë§¤ ì£¼ìœ ê¸° ì„¤ì • ì„œë¡œ ë³€ê²½ í•˜ëŠ” ë²„íŠ¼
 public class Grounds_Main_Change_Button : MonoBehaviour, IPointerClickHandler
 {
     TMP_Text Text;
@@ -602,18 +602,18 @@ public class Grounds_Main_Change_Button : MonoBehaviour, IPointerClickHandler
         switch (Grounds_Menu_Canvas.Ground_Menu_Sellect)
         {
             case GROUNDS_MAIN_POP_UP_SELLECT.BUY_GROUNDS:
-                Text.text = "ÁÖÀ¯±â ¼³Á¤";
+                Text.text = "ì£¼ìœ ê¸° ì„¤ì •";
                 break;
             case GROUNDS_MAIN_POP_UP_SELLECT.LUB_SETTING:
-                Text.text = "ºÎÁö ±¸¸Å";
+                Text.text = "ë¶€ì§€ êµ¬ë§¤";
                 break;
             case GROUNDS_MAIN_POP_UP_SELLECT.LUB_MOVE:
-                Text.text = "ÀÌµ¿ Ãë¼Ò";
+                Text.text = "ì´ë™ ì·¨ì†Œ";
                 break;
             default:
                 break;
         }
-    } // ºÎÁö±¸¸ÅÀÏ °æ¿ì ÁÖÀ¯±â ¼³Á¤À¸·Î 
+    } // ë¶€ì§€êµ¬ë§¤ì¼ ê²½ìš° ì£¼ìœ ê¸° ì„¤ì •ìœ¼ë¡œ 
 
     void Disable_Me()
     {
@@ -656,7 +656,7 @@ public class Grounds_Main_Change_Button : MonoBehaviour, IPointerClickHandler
     }
 }
 
-//ºÎÁö ±¸¸Å , ÁÖÀ¯±â ¼³Á¤
+//ë¶€ì§€ êµ¬ë§¤ , ì£¼ìœ ê¸° ì„¤ì •
 #region Grounds Main Pop Up
 
 public class Lub_Setting_Button : MonoBehaviour, IPointerClickHandler
@@ -682,9 +682,9 @@ public class Grounds_Menu_Cancle_Panel : MonoBehaviour, IPointerClickHandler
 }
 public class Grounds_Main_Pop_Up : MonoBehaviour
 {
-    GameObject m_Lub_Setting; // ÁÖÀ¯±â ¼¼ÆÃ ¹öÆ°
-    GameObject m_Buy_Grounds; // ºÎÁö ±¸¸Å ¹öÆ°
-    GameObject m_Cancle_Panel; // ºó°ø°£ ´©¸£¸é Ãë¼Ò
+    GameObject m_Lub_Setting; // ì£¼ìœ ê¸° ì„¸íŒ… ë²„íŠ¼
+    GameObject m_Buy_Grounds; // ë¶€ì§€ êµ¬ë§¤ ë²„íŠ¼
+    GameObject m_Cancle_Panel; // ë¹ˆê³µê°„ ëˆ„ë¥´ë©´ ì·¨ì†Œ
 
     void Exit_Me()
     {
@@ -715,7 +715,7 @@ public class Grounds_Main_Pop_Up : MonoBehaviour
 
     private void LateUpdate()
     {
-        Exit_Me(); // ¼±ÅÃµÇ¸é ÆË¾÷ Á¾·á
+        Exit_Me(); // ì„ íƒë˜ë©´ íŒì—… ì¢…ë£Œ
     }
 }
 
@@ -729,7 +729,7 @@ public class Grounds_Menu_Exit : MonoBehaviour, IPointerClickHandler
     }
 }
 
-// ºÎÁö ¸Ş´º
+// ë¶€ì§€ ë©”ë‰´
 public class Grounds_Menu_Canvas : MonoBehaviour
 {
     //Lub_Inventory
@@ -742,7 +742,7 @@ public class Grounds_Menu_Canvas : MonoBehaviour
     public static ON_OFF Lub_Change_Sellect { get { return m_Lub_Change_Sellect; } }
     public static ON_OFF Set_Lub_Change_Sellect { set { m_Lub_Change_Sellect= value; } }
 
-    static int m_Move_Grounds_Index = -1; //Move_Grounds ¿¡¼­ »ç¿ë
+    static int m_Move_Grounds_Index = -1; //Move_Grounds ì—ì„œ ì‚¬ìš©
     public static int Move_Grounds_Index { get { return m_Move_Grounds_Index; } }
     public static int Set_Move_Grounds_Index { set { m_Move_Grounds_Index= value; } }
 
@@ -756,21 +756,21 @@ public class Grounds_Menu_Canvas : MonoBehaviour
     public static ON_OFF Buy_Grounds_Sellect { get { return m_Buy_Grounds_Sellect; } }
     public static ON_OFF Set_Buy_Grounds_Sellect { set { m_Buy_Grounds_Sellect = value; } }
 
-    //ºÎÁö ¼±ÅÃ - Buy_Station Å¬·¡½º
-    static bool m_Is_Input = false; //ÀÔ·ÂÀÌ ÀÖ¾ú´Â°¡?
+    //ë¶€ì§€ ì„ íƒ - Buy_Station í´ë˜ìŠ¤
+    static bool m_Is_Input = false; //ì…ë ¥ì´ ìˆì—ˆëŠ”ê°€?
     public static bool Is_Input { get { return m_Is_Input; } }
-    static int m_Sellected_Grounds_Index = -1; // ¼±ÅÃµÈ ºÎÁöÀÇ ÀÎµ¦½º
+    static int m_Sellected_Grounds_Index = -1; // ì„ íƒëœ ë¶€ì§€ì˜ ì¸ë±ìŠ¤
     public static int Sellected_Grounds_Index { get { return m_Sellected_Grounds_Index; } }
 
-    // ºÎÁö±¸¸Å, ÁÖÀ¯±â¼³Á¤ Change ¹öÆ° - Grounds_Main_Change_Button
+    // ë¶€ì§€êµ¬ë§¤, ì£¼ìœ ê¸°ì„¤ì • Change ë²„íŠ¼ - Grounds_Main_Change_Button
 
-    // ºÎÁö±¸¸Å, ÁÖÀ¯±â¼³Á¤ - Main_Pop_Up
+    // ë¶€ì§€êµ¬ë§¤, ì£¼ìœ ê¸°ì„¤ì • - Main_Pop_Up
     static GROUNDS_MAIN_POP_UP_SELLECT m_Ground_Menu_Sellect = GROUNDS_MAIN_POP_UP_SELLECT.ON;
     public static GROUNDS_MAIN_POP_UP_SELLECT Ground_Menu_Sellect { get { return m_Ground_Menu_Sellect; } }
     public static GROUNDS_MAIN_POP_UP_SELLECT Set_Ground_Menu_Sellect { set { m_Ground_Menu_Sellect = value; } }
     
 
-    public static bool IsReset; // ºÎÁö¼³Á¤ ³¡³ª´Â ¸ğµç°÷ enum static ÃÊ±âÈ­
+    public static bool IsReset; // ë¶€ì§€ì„¤ì • ëë‚˜ëŠ” ëª¨ë“ ê³³ enum static ì´ˆê¸°í™”
 
 
     GameObject m_Main_Pop_Up;
@@ -778,7 +778,7 @@ public class Grounds_Menu_Canvas : MonoBehaviour
     GameObject m_Buy_Grounds_Pop_Up;
     GameObject m_Lub_Install_Pop_Up;
     GameObject m_Lub_Change_Pop_Up;
-    GameObject m_Exit; // Main_Pop_Up ¿¡¼­´Â ¾È¶ß°í ¼±ÅÃÈÄºÎÅÍ ¶ä (µ·, ¸Ş´º¹öÆ° ¾Èº¸ÀÌ°Ô ÇÑ ´ÙÀ½ºÎÅÍ)
+    GameObject m_Exit; // Main_Pop_Up ì—ì„œëŠ” ì•ˆëœ¨ê³  ì„ íƒí›„ë¶€í„° ëœ¸ (ëˆ, ë©”ë‰´ë²„íŠ¼ ì•ˆë³´ì´ê²Œ í•œ ë‹¤ìŒë¶€í„°)
     GameObject m_Lub_Inventory;
 
     void Lub_Inventory()
@@ -799,12 +799,12 @@ public class Grounds_Menu_Canvas : MonoBehaviour
             if (Move_Grounds_Index != -1)
             {
                 PlayerScript.Instance.m_Grounds[Sellected_Grounds_Index].Install_Lub(
-                    PlayerScript.Instance.m_Grounds[Move_Grounds_Index].Installed_Lub); //¼±ÅÃÇÑ ¶¥¿¡ ÁÖÀ¯±â Ãß°¡ÇÏ°í
-                PlayerScript.Instance.m_Grounds[Move_Grounds_Index].Install_Lub(null); //¿ø·¡ ¶¥¿¡ ÁÖÀ¯±â ¾ø¾Ö°í
-                Buy_Station.Reset_Grounds();//Buy_Station È­¸éÇ¥½Ã ¸®¼Â (±ôºıÀÌ´Â°Å ÅëÀÏ¼ºÀ» À§ÇØ)
-                m_Move_Grounds_Index = -1; // ¼±ÅÃ ÃÊ±âÈ­
-                m_Ground_Menu_Sellect = GROUNDS_MAIN_POP_UP_SELLECT.LUB_SETTING; // ÀÌµ¿ ¿Ï·áÇßÀ¸´Ï ÁÖÀ¯±â ¼¼ÆÃÀ¸·Î µÇµ¹¸®±â
-            } // MoveÀÎ °æ¿ì¿¡´Â ¼±ÅÃ½Ã ÁÖÀ¯±â¸¦ ÀÌµ¿½ÃÅ°°í ÆË¾÷Àº ¿­Áö¾ÊÀ½
+                    PlayerScript.Instance.m_Grounds[Move_Grounds_Index].Installed_Lub); //ì„ íƒí•œ ë•…ì— ì£¼ìœ ê¸° ì¶”ê°€í•˜ê³ 
+                PlayerScript.Instance.m_Grounds[Move_Grounds_Index].Install_Lub(null); //ì›ë˜ ë•…ì— ì£¼ìœ ê¸° ì—†ì• ê³ 
+                Buy_Station.Reset_Grounds();//Buy_Station í™”ë©´í‘œì‹œ ë¦¬ì…‹ (ê¹œë¹¡ì´ëŠ”ê±° í†µì¼ì„±ì„ ìœ„í•´)
+                m_Move_Grounds_Index = -1; // ì„ íƒ ì´ˆê¸°í™”
+                m_Ground_Menu_Sellect = GROUNDS_MAIN_POP_UP_SELLECT.LUB_SETTING; // ì´ë™ ì™„ë£Œí–ˆìœ¼ë‹ˆ ì£¼ìœ ê¸° ì„¸íŒ…ìœ¼ë¡œ ë˜ëŒë¦¬ê¸°
+            } // Moveì¸ ê²½ìš°ì—ëŠ” ì„ íƒì‹œ ì£¼ìœ ê¸°ë¥¼ ì´ë™ì‹œí‚¤ê³  íŒì—…ì€ ì—´ì§€ì•ŠìŒ
         }
     }
     void Lub_Install_Or_Change()
@@ -836,9 +836,9 @@ public class Grounds_Menu_Canvas : MonoBehaviour
             m_Buy_Grounds_Sellect = ON_OFF.ON;
             m_Buy_Grounds_Pop_Up.SetActive(true);
         }
-    }//ºÎÁö±¸¸Å On - ¸ŞÀÎ¿¡¼­ ºÎÁö±¸¸Å ´©¸£°í , ºÎÁö  Å¬¸¯µÇ°í ,  BUY_GROUNDS_POP_UP.ON ÀÌ¸é (½ºÅ©¸³Æ® ³»¿¡¼­ ¼³Á¤)
+    }//ë¶€ì§€êµ¬ë§¤ On - ë©”ì¸ì—ì„œ ë¶€ì§€êµ¬ë§¤ ëˆ„ë¥´ê³  , ë¶€ì§€  í´ë¦­ë˜ê³  ,  BUY_GROUNDS_POP_UP.ON ì´ë©´ (ìŠ¤í¬ë¦½íŠ¸ ë‚´ì—ì„œ ì„¤ì •)
 
-    // ºÎÁö ±ôºıÀÌ´Â°Å ¼±ÅÃ
+    // ë¶€ì§€ ê¹œë¹¡ì´ëŠ”ê±° ì„ íƒ
     #region Sellect Actived Grounds
     
     string Number_Extract;
@@ -846,23 +846,23 @@ public class Grounds_Menu_Canvas : MonoBehaviour
     RaycastHit hit;
     void Grounds_Sellect()
     {
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition); // È­¸é ÅÍÄ¡ÇÏ´Â À§Ä¡ ÀúÀå.
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition); // í™”ë©´ í„°ì¹˜í•˜ëŠ” ìœ„ì¹˜ ì €ì¥.
 
         if (Input.GetMouseButtonDown(0))
         {
             if (Physics.Raycast(ray, out hit))
             {
-                /* 1. ÁÖÀ¯¼Ò Ä­ »óÀÚ¸¦ Å¬¸¯ÇÑ °ªÀ» ÀúÀåÇÏ°Ô ÇÔ.
-                 * 2. ÁÖÀ¯¼Ò »óÀÚµéÀ» ´«¾Õ¿¡¼­ »ç¶óÁö°Ô ÇØ¾ßÇÔ. ÀÌ°Ô »ç¶óÁö´Â ¼ø¼­°¡ ¾ğÁ¦ÀÎÁö°¡ Áß¿äÇÑµí. »ç½Ç»ó ºó°ø°£ Å¬¸¯Çß´Âµ¥
-                 *      »ç¶óÁö¸é ¾ÈµÇ´Ï±ñ.
-                 * 3. ÁÖÀ¯¼Ò »óÀÚµéÀÌ »ç¶óÁø ÈÄ ±× ÀÚ¸®¿¡ ÁÖÀ¯±â°¡ Ãß°¡ÇØ¾ßÇÔ 
-                    4. case·Î Ç×¸ñÀ» ¼±ÅÃÁö·Î Ãß°¡ÇÏµÇ caseÀü¿¡ °øÅëµÈ Ç×¸ñÀ¸·Î 2¹øÀº °¡´ÉÇÒµí.
+                /* 1. ì£¼ìœ ì†Œ ì¹¸ ìƒìë¥¼ í´ë¦­í•œ ê°’ì„ ì €ì¥í•˜ê²Œ í•¨.
+                 * 2. ì£¼ìœ ì†Œ ìƒìë“¤ì„ ëˆˆì•ì—ì„œ ì‚¬ë¼ì§€ê²Œ í•´ì•¼í•¨. ì´ê²Œ ì‚¬ë¼ì§€ëŠ” ìˆœì„œê°€ ì–¸ì œì¸ì§€ê°€ ì¤‘ìš”í•œë“¯. ì‚¬ì‹¤ìƒ ë¹ˆê³µê°„ í´ë¦­í–ˆëŠ”ë°
+                 *      ì‚¬ë¼ì§€ë©´ ì•ˆë˜ë‹ˆê¹.
+                 * 3. ì£¼ìœ ì†Œ ìƒìë“¤ì´ ì‚¬ë¼ì§„ í›„ ê·¸ ìë¦¬ì— ì£¼ìœ ê¸°ê°€ ì¶”ê°€í•´ì•¼í•¨ 
+                    4. caseë¡œ í•­ëª©ì„ ì„ íƒì§€ë¡œ ì¶”ê°€í•˜ë˜ caseì „ì— ê³µí†µëœ í•­ëª©ìœ¼ë¡œ 2ë²ˆì€ ê°€ëŠ¥í• ë“¯.
                  */
                 if (hit.transform.gameObject.GetComponent<Animator>() != null)
                 {
                     if(EventSystem.current.IsPointerOverGameObject() == false)
                     {
-                        Number_Extract = Regex.Replace(hit.transform.gameObject.name, @"\D", ""); // °ÔÀÓ¿ÀºêÁ§Æ®¿¡¼­ ¼ıÀÚ¸¸ ÃßÃâ
+                        Number_Extract = Regex.Replace(hit.transform.gameObject.name, @"\D", ""); // ê²Œì„ì˜¤ë¸Œì íŠ¸ì—ì„œ ìˆ«ìë§Œ ì¶”ì¶œ
                         m_Sellected_Grounds_Index = int.Parse(Number_Extract);
                         m_Is_Input = true;
                     }
@@ -872,7 +872,7 @@ public class Grounds_Menu_Canvas : MonoBehaviour
             }
         }
     }
-    #endregion  // ºÎÁö ±ôºıÀÌ´Â°Å ¼±ÅÃ
+    #endregion  // ë¶€ì§€ ê¹œë¹¡ì´ëŠ”ê±° ì„ íƒ
     
     void Main_Change_Button()
     {
@@ -889,7 +889,7 @@ public class Grounds_Menu_Canvas : MonoBehaviour
         {
             m_Main_Pop_Up.SetActive(true);
         }
-    } //¸ŞÀÎÆË¾÷ On - GROUNDS_MAIN_POP_UP_SELLECT.ON ÀÌ¸é (MenuScipt - Menu_Grounds ¿¡¼­ ¼³Á¤)  
+    } //ë©”ì¸íŒì—… On - GROUNDS_MAIN_POP_UP_SELLECT.ON ì´ë©´ (MenuScipt - Menu_Grounds ì—ì„œ ì„¤ì •)  
 
     void Main_Canvas_And_Exit_OnOff()
     {
@@ -906,7 +906,7 @@ public class Grounds_Menu_Canvas : MonoBehaviour
             Station.Instance.Main_Canvas.SetActive(false);
             m_Exit.SetActive(true);
         }
-    } // ºÎÁö±¸¸Å³ª ÁÖÀ¯±â ¼³Ä¡ÇÒ¶§ ¸ŞÀÎ Äµ¹ö½º Àá½Ã ²ô°í ³ª°¡±â ¹öÆ° ÄÔ
+    } // ë¶€ì§€êµ¬ë§¤ë‚˜ ì£¼ìœ ê¸° ì„¤ì¹˜í• ë•Œ ë©”ì¸ ìº”ë²„ìŠ¤ ì ì‹œ ë„ê³  ë‚˜ê°€ê¸° ë²„íŠ¼ ì¼¬
 
     void Insert_Component_In_Child()
     {
@@ -924,7 +924,7 @@ public class Grounds_Menu_Canvas : MonoBehaviour
         m_Exit.AddComponent<Grounds_Menu_Exit>();
         m_Lub_Inventory = transform.Find("Lub Inventory").gameObject;
         m_Lub_Inventory.AddComponent<Lub_Inventory>();
-    } //ÀÚ½Äµé ÄÄÆ÷³ÍÆ® ³Ö±â
+    } //ìì‹ë“¤ ì»´í¬ë„ŒíŠ¸ ë„£ê¸°
     
 
     void Reset_All_Pop_Up()
@@ -935,8 +935,8 @@ public class Grounds_Menu_Canvas : MonoBehaviour
         m_Lub_Change_Sellect = ON_OFF.OFF; 
         m_Sellected_Grounds_Index = -1;
         m_Move_Grounds_Index = -1;
-        Main_Canvas_And_Exit_OnOff(); // ¸ŞÀÎÄµ¹ö½º(µ·, ¸Ş´º¹öÆ°) ÄÑ°í ³ª°¡±â¹öÆ° ¾ø¾Ö°í
-    } // ºÎÁö¼³Á¤ ³¡³ª´Â ¸ğµç°÷ enum static ÃÊ±âÈ­
+        Main_Canvas_And_Exit_OnOff(); // ë©”ì¸ìº”ë²„ìŠ¤(ëˆ, ë©”ë‰´ë²„íŠ¼) ì¼œê³  ë‚˜ê°€ê¸°ë²„íŠ¼ ì—†ì• ê³ 
+    } // ë¶€ì§€ì„¤ì • ëë‚˜ëŠ” ëª¨ë“ ê³³ enum static ì´ˆê¸°í™”
     void Reset_And_Exit()
     {
         if (IsReset == true)
@@ -951,7 +951,7 @@ public class Grounds_Menu_Canvas : MonoBehaviour
     {
         Insert_Component_In_Child();
         Reset_All_Pop_Up();
-        m_Exit.SetActive(false); // Reset ¿¡¼­´Â ¸ŞÀÎ Äµ¹ö½º°¡ TRUEÀÎ »óÅÂ¶ó Àû¿ëÀÌ ¾ÈµÊ
+        m_Exit.SetActive(false); // Reset ì—ì„œëŠ” ë©”ì¸ ìº”ë²„ìŠ¤ê°€ TRUEì¸ ìƒíƒœë¼ ì ìš©ì´ ì•ˆë¨
     }
     private void Update()
     {
@@ -960,19 +960,19 @@ public class Grounds_Menu_Canvas : MonoBehaviour
     private void LateUpdate()
     {
         Main_Change_Button();
-        Main_Canvas_And_Exit_OnOff(); // ºÎÁö¼±ÅÃÇÒ¶§ ¸ŞÀÎÄµ¹ö½º(µ· ¸Ş´º¹öÆ° µî) ¹æÇØµÇ¼­ ²ô°í ³ª°¡±â ¹öÆ° ÄÑ´Â ±â´É
-        Grounds_Sellect(); // ºÎÁö¼±ÅÃ
-        Grounds_Buy_Pop_Up(); //ºÎÁö¸¦ ±¸¸ÅÇÏ½Ã°Ù½À´Ï±î?
-        Lub_Install_Or_Change(); // ÁÖÀ¯±â À¯¹«¿¡ µû¶ó ¼³Ä¡ or º¯°æ ÆË¾÷
+        Main_Canvas_And_Exit_OnOff(); // ë¶€ì§€ì„ íƒí• ë•Œ ë©”ì¸ìº”ë²„ìŠ¤(ëˆ ë©”ë‰´ë²„íŠ¼ ë“±) ë°©í•´ë˜ì„œ ë„ê³  ë‚˜ê°€ê¸° ë²„íŠ¼ ì¼œëŠ” ê¸°ëŠ¥
+        Grounds_Sellect(); // ë¶€ì§€ì„ íƒ
+        Grounds_Buy_Pop_Up(); //ë¶€ì§€ë¥¼ êµ¬ë§¤í•˜ì‹œê²ŸìŠµë‹ˆê¹Œ?
+        Lub_Install_Or_Change(); // ì£¼ìœ ê¸° ìœ ë¬´ì— ë”°ë¼ ì„¤ì¹˜ or ë³€ê²½ íŒì—…
             Lub_Move();
-        Lub_Inventory(); // ÁÖÀ¯±â ÀÎº¥Åä¸® ¶ç¿ì±â
+        Lub_Inventory(); // ì£¼ìœ ê¸° ì¸ë²¤í† ë¦¬ ë„ìš°ê¸°
         Reset_And_Exit();
     }
 }
 
-#endregion //Grounds_Menu_Canvas ÇÏÀ§
+#endregion //Grounds_Menu_Canvas í•˜ìœ„
 
-// ¼±¾ğÀº ¿©±â¼­ µÇÁö¸¸ »ç¿ëÀº À§¿¡ ÀÖ´Â Grounds_Menu_Canvas ¿¡¼­ ÇÑ´Ù
+// ì„ ì–¸ì€ ì—¬ê¸°ì„œ ë˜ì§€ë§Œ ì‚¬ìš©ì€ ìœ„ì— ìˆëŠ” Grounds_Menu_Canvas ì—ì„œ í•œë‹¤
 public class Buy_Station : MonoBehaviour
 {
     static GameObject[] Arr_Buy_Area;
@@ -1041,7 +1041,7 @@ public class Buy_Station : MonoBehaviour
             }
         }
 
-    } // Grounds_Main_Pop_Up ¼±ÅÃ¿¡ µû¶ó Å¬¸¯ °¡´ÉÇÑ ºÎÁö¸¦ È°¼ºÈ­
+    } // Grounds_Main_Pop_Up ì„ íƒì— ë”°ë¼ í´ë¦­ ê°€ëŠ¥í•œ ë¶€ì§€ë¥¼ í™œì„±í™”
     void Get_Child()
     {
         Arr_Buy_Area = new GameObject[transform.childCount];
@@ -1051,14 +1051,14 @@ public class Buy_Station : MonoBehaviour
         }
         if (Arr_Buy_Area.Length != PlayerScript.Instance.m_Grounds.Length)
         {
-            Debug.LogError("if (Arr_Buy_Area.Length != PlayerScript.Instance.m_Grounds.Length) ÇöÀç ºÎÁö °¹¼ö¿Í ÇÃ·¹ÀÌ¾î¿¡ ÀÔ·ÂµÈ ºÎÁö °¹¼ö°¡ ´Ù¸£´Ù (ÇÃ·¹ÀÌ¾î°¡ ¼ÒÀ¯ÇÑ ºÎÁö¾Æ´Ô falseµµ Æ÷ÇÔ)");
+            Debug.LogError("if (Arr_Buy_Area.Length != PlayerScript.Instance.m_Grounds.Length) í˜„ì¬ ë¶€ì§€ ê°¯ìˆ˜ì™€ í”Œë ˆì´ì–´ì— ì…ë ¥ëœ ë¶€ì§€ ê°¯ìˆ˜ê°€ ë‹¤ë¥´ë‹¤ (í”Œë ˆì´ì–´ê°€ ì†Œìœ í•œ ë¶€ì§€ì•„ë‹˜ falseë„ í¬í•¨)");
         }
-    } // È°¼ºÈ­ µÇ¾îÀÖ´Â ÀÚ½Äµé¸¸ °¡Á®¿È (ÇÏÀ§ ¿ÀºêÁ§Æ® È°¼ºÈ­ ÇÊ¼ö)
+    } // í™œì„±í™” ë˜ì–´ìˆëŠ” ìì‹ë“¤ë§Œ ê°€ì ¸ì˜´ (í•˜ìœ„ ì˜¤ë¸Œì íŠ¸ í™œì„±í™” í•„ìˆ˜)
 
     private void Start()
     {
-        Get_Child(); // PlayerScript°¡ Station ÀÌÈÄ¿¡ Awake µÇ±â ¶§¹®¿¡
-                     // ÀÌ ÇÔ¼ö¸¦ Awake ¿¡¼­ Ã³¸®ÇÏ¸é null ¿À·ù ¹ß»ı
+        Get_Child(); // PlayerScriptê°€ Station ì´í›„ì— Awake ë˜ê¸° ë•Œë¬¸ì—
+                     // ì´ í•¨ìˆ˜ë¥¼ Awake ì—ì„œ ì²˜ë¦¬í•˜ë©´ null ì˜¤ë¥˜ ë°œìƒ
     }
 
     private void Update()
@@ -1094,7 +1094,7 @@ public class Main_Station : MonoBehaviour
         {
             Station.Grounds[i].Insert_Ground_Position(Children[i].position);
         }
-    } // ¸¸µé¾î³í ¿ÀºêÁ§Æ® À§Ä¡¸¦ m_Groonds ¿¡ ³ÖÀ¸¸é Player°¡ Awake ·Î °¡Á®°¨
+    } // ë§Œë“¤ì–´ë…¼ ì˜¤ë¸Œì íŠ¸ ìœ„ì¹˜ë¥¼ m_Groonds ì— ë„£ìœ¼ë©´ Playerê°€ Awake ë¡œ ê°€ì ¸ê°
 
     void Get_Station()
     {
@@ -1103,11 +1103,11 @@ public class Main_Station : MonoBehaviour
         {
             Children[i] = transform.GetChild(i);
         }
-    } // Station(=ÀÚ½Ä) °¡Á®¿È
+    } // Station(=ìì‹) ê°€ì ¸ì˜´
 
     private void Update()
     {
-        Station_Activate(); // °ÔÀÓ ½ÃÀÛ¶§ È°¼ºÈ­ ÇÏ°í, °ÔÀÓ Áß¿¡´Â ºÎÁö¸¦ ±¸¸ÅÇÏ¸é ºÎÁö È°¼ºÈ­
+        Station_Activate(); // ê²Œì„ ì‹œì‘ë•Œ í™œì„±í™” í•˜ê³ , ê²Œì„ ì¤‘ì—ëŠ” ë¶€ì§€ë¥¼ êµ¬ë§¤í•˜ë©´ ë¶€ì§€ í™œì„±í™”
     }
     private void Awake()
     {
@@ -1117,7 +1117,7 @@ public class Main_Station : MonoBehaviour
 }
 public class Station : MonoBehaviour
 {
-    private static Station _instance;  //½Ì±ÛÅæ
+    private static Station _instance;  //ì‹±ê¸€í†¤
     public static Station Instance
     {
         get
@@ -1128,13 +1128,13 @@ public class Station : MonoBehaviour
 
                 if (_instance == null)
                 {
-                    Debug.Log("½Ì±ÛÅæ ¿ÀºêÁ§Æ® ¾øÀ½");
+                    Debug.Log("ì‹±ê¸€í†¤ ì˜¤ë¸Œì íŠ¸ ì—†ìŒ");
                 }
             }
 
             return _instance;
         }
-    }  //½Ì±ÛÅæ
+    }  //ì‹±ê¸€í†¤
     void SingleTone()
     {
         if (_instance == null)
@@ -1147,16 +1147,16 @@ public class Station : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-    } // ½Ì±ÛÅæ
+    } // ì‹±ê¸€í†¤
 
     
-    public GameObject m_Grounds_Menu_Canvas; // ÄÄÆ÷³ÍÆ® Àû¿ëÀ§ÇØ ¼±¾ğ 
-    public GameObject Main_Canvas; //ºÎÁö ¼±ÅÃÈ­¸é¿¡¼­ ¸Ş´º¹öÆ° ²ô·Á°í ¼±¾ğ 
+    public GameObject m_Grounds_Menu_Canvas; // ì»´í¬ë„ŒíŠ¸ ì ìš©ìœ„í•´ ì„ ì–¸ 
+    public GameObject Main_Canvas; //ë¶€ì§€ ì„ íƒí™”ë©´ì—ì„œ ë©”ë‰´ë²„íŠ¼ ë„ë ¤ê³  ì„ ì–¸ 
 
-    public GameObject m_Buy_Station; // ÁÖÀ¯±â ¼³Ä¡ Ä­ º¸±â(ºÎ¸ğ ¿ÀºêÁ§Æ®)
-    public GameObject m_Main_Station; // ÁÖÀ¯±â ¼³Ä¡ µÇ°í ³ª¸é º¸ÀÌ´Â Ä­ (ºÎ¸ğ ¿ÀºêÁ§Æ®)
-    static Grounds[] m_Grounds; // ºÎÁö ¼³Á¤
-    public static Grounds[] Grounds { get { return m_Grounds; } } // ÇÃ·¹ÀÌ¾î, Buy_Station¿¡°Ô ºÎÁö Á¤º¸ º¸³¿
+    public GameObject m_Buy_Station; // ì£¼ìœ ê¸° ì„¤ì¹˜ ì¹¸ ë³´ê¸°(ë¶€ëª¨ ì˜¤ë¸Œì íŠ¸)
+    public GameObject m_Main_Station; // ì£¼ìœ ê¸° ì„¤ì¹˜ ë˜ê³  ë‚˜ë©´ ë³´ì´ëŠ” ì¹¸ (ë¶€ëª¨ ì˜¤ë¸Œì íŠ¸)
+    static Grounds[] m_Grounds; // ë¶€ì§€ ì„¤ì •
+    public static Grounds[] Grounds { get { return m_Grounds; } } // í”Œë ˆì´ì–´, Buy_Stationì—ê²Œ ë¶€ì§€ ì •ë³´ ë³´ëƒ„
 
     
 
@@ -1164,7 +1164,7 @@ public class Station : MonoBehaviour
     {
         m_Grounds = new Grounds[]
         {
-            new Grounds(1000), //0¹ø ºÎÁö
+            new Grounds(1000), //0ë²ˆ ë¶€ì§€
             new Grounds(2000), //1
             new Grounds(3000), //2
             new Grounds(4000), //3
@@ -1181,12 +1181,12 @@ public class Station : MonoBehaviour
         m_Buy_Station.AddComponent<Buy_Station>();
         m_Main_Station.AddComponent<Main_Station>();
         m_Grounds_Menu_Canvas.AddComponent<Grounds_Menu_Canvas>();
-    } //¿£Áø¿¡¼­ ¹Ş¾Æ¿Í¼­ ³Ö¾îÁÜ
+    } //ì—”ì§„ì—ì„œ ë°›ì•„ì™€ì„œ ë„£ì–´ì¤Œ
 
     private void Awake()
     {
         SingleTone();
-        Setting_Grounds(); //ºÎÁö ¼³Á¤
+        Setting_Grounds(); //ë¶€ì§€ ì„¤ì •
         Child_Setting();
     }
 }

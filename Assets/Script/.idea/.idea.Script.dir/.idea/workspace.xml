@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="13e6ec14-7bef-456d-a6f0-b11d31e5620b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Resources/Asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Resources/Asset/DataFromSheetsBox.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Resources/Asset/DataFromSheetsBox.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GoogleSheetsDatas.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GoogleSheetsDatas/DataFromSheets.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GoogleSheetsDatas/DataFromSheets.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/.idea.Gasstation_1st/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/.idea.Gasstation_1st/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/.idea.Gasstation_1st/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/.idea.Gasstation_1st/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Google Sheets to Unity/Animal Example/Scripts/Scriptable Objects/TestData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Google Sheets to Unity/Animal Example/Scripts/Scriptable Objects/TestData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Google Sheets to Unity/Resources/GSTU_Config.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../Google Sheets to Unity/Resources/GSTU_Config.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Google Sheets to Unity/Test/TestData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../Google Sheets to Unity/Test/TestData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PlayerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Station.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Station.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="2LP8LIoJVB3dspQw0dDvEBXxPG4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/gangjeongho/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
+      "/Users/gangjeongho/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
+      "/Users/gangjeongho/.local/share/Symbols/src"
+    ]
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="13e6ec14-7bef-456d-a6f0-b11d31e5620b" name="Changes" comment="" />
+      <created>1675761300737</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675761300737</updated>
+      <workItem from="1675761302395" duration="222000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

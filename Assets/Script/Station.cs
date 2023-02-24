@@ -521,8 +521,8 @@ public class Buy_Grounds_Buy_Button : MonoBehaviour, IPointerClickHandler
     void Calculate()
     {
         Sellected_Grounds.On_Grounds();
-        PlayerScript.Instance.m_Money -= Sellected_Grounds.Value;
-        Debug.Log(PlayerScript.Instance.m_Money);
+        GameManager.Instance.m_Money -= Sellected_Grounds.Value;
+        Debug.Log(GameManager.Instance.m_Money);
     }
     void OnEnable()
     {
@@ -582,7 +582,7 @@ public class Buy_Grounds_Pop_Up : MonoBehaviour
     }
     private void OnEnable()
     {
-        m_Gold_Text.text = "보유금액 : " + PlayerScript.Instance.m_Money;
+        m_Gold_Text.text = "보유금액 : " + GameManager.Instance.m_Money;
     }
     private void LateUpdate()
     {

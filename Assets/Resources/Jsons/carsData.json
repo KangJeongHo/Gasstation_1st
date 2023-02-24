@@ -1,0 +1,20 @@
+{
+  "carsList": [
+    {
+      "mCarName": "RedCar",
+      "mCarGasAmountMin": 5,
+      "mCarGasAmountMax": 15,
+      "mCarGasAmountRand": 10,
+      "mCarLimitTimeMin": 5,
+      "mCarLimitTimeMax": 10,
+      "mCarLimitTimeRand": 5,
+      "mCarSatisfactionMin": 1,
+      "mCarSatisfactionMax": 1,
+      "mCarSatisfactionRand": 1,
+      "mCarZenProbability": 1,
+      "mCarOpenLevel": 1,
+      "mCarImage": "RedCar",
+      "mIsActive": true
+    }
+  ]
+}

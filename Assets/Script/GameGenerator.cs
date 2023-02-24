@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
-using GoogleSheetsToUnity;
 using UnityEngine.Events;
 
 
@@ -12,14 +11,7 @@ using UnityEngine.Events;
 
 public class GameGenerator : MonoBehaviour
 {
-    //해당 내용은 시트 호출을 위해 사용하는 내용들
-    private string id = "1RgsaoZoHw5pxwQVwIlxV_H8knM3nIw63g98mXzcY9Cc";
-    private string CarSheetName = "CarDatas";
 
-    void UpdateStats(UnityAction<GstuSpreadSheet> callback, bool mergedCells = false)
-    {
-        SpreadsheetManager.Read(new GSTU_Search(id, CarSheetName), callback, mergedCells);
-    }
     
 
 }

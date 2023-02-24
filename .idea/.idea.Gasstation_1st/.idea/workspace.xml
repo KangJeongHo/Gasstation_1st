@@ -2,14 +2,127 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c04897e-6f0f-45c0-9bed-486daf3292c8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Gasstation_1st/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gasstation_1st/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/Car/CarController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Gasstation_1st/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gasstation_1st/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Scripts/Scriptable Objects/TestData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Scripts/Scriptable Objects/TestData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Resources/GSTU_Config.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Resources/GSTU_Config.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Test/TestData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Test/TestData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/게임스탓또.m4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/게임스탓또.m4a.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/게임스탓또.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/게임스탓또.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/호있쨔.m4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/호있쨔.m4a.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/호있쨔.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/호있쨔.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Animal Stats google sheets link.url" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Animal Stats google sheets link.url.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Animal Stats.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Animal Stats/Badger.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Animal Stats/Badger.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Animal Stats/Cat.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Animal Stats/Cat.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Animal Stats/Dog.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Animal Stats/Dog.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Animal Stats/Mouse.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Animal Stats/Mouse.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Example Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Example Scenes/Private Sheet.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Example Scenes/Private Sheet/Private Animal Example.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Example Scenes/Private Sheet/Private Animal Example.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Example Scenes/Public Sheet.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Example Scenes/Public Sheet/Public Animals Example.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Example Scenes/Public Sheet/Public Animals Example.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Resources/AnimalContainer.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Resources/AnimalContainer.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Scripts/AnimalManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Scripts/AnimalManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Scripts/AnimalObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Scripts/AnimalObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Scripts/Scriptable Objects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Scripts/Scriptable Objects/Animal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Scripts/Scriptable Objects/Animal.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Scripts/Scriptable Objects/AnimalContainer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Scripts/Scriptable Objects/AnimalContainer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Scripts/Scriptable Objects/TestData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Animal Example/Scripts/Scriptable Objects/TestData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Google Sheets to Unity Documentation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Google Sheets to Unity Documentation.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Resources/GSTU_Config.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Resources/GSTU_Config.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/Editor/GoogleSheetsToUnityEditorWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/Editor/GoogleSheetsToUnityEditorWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/Utils.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/Utils/EditorCoroutineRunner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/Utils/EditorCoroutineRunner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/Utils/GoogleSheetsToUnityConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/Utils/GoogleSheetsToUnityConfig.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/Utils/GoogleSheetsToUnityUtilities.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/Utils/GoogleSheetsToUnityUtilities.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/Utils/SecondaryKeyDictionary.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/Utils/SecondaryKeyDictionary.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/Utils/Task.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/Utils/Task.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/OAuth2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/OAuth2.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/Plugins.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.AccessControl.DLL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.AccessControl.DLL.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Client.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Client.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Documents.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Documents.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Extensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Extensions.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Spreadsheets.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Spreadsheets.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/Plugins/TinyJSON.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/Plugins/TinyJSON.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/PublicSpreadSheetManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/PublicSpreadSheetManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/SecurityPolicy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/SecurityPolicy.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/SpreadSheetManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v3/SpreadSheetManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v4.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v4/GoogleAuthrisationHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v4/GoogleAuthrisationHelper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v4/Private.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v4/Private/SpreadsheetManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v4/Private/SpreadsheetManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v4/Public.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v4/Public/SpreadsheetManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v4/Public/SpreadsheetManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v4/Spreadsheet.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Scripts/v4/Spreadsheet.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Test.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Test/TestData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets to Unity/Test/TestData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Asset/DataFromSheetsBox.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Asset/DataFromSheetsBox.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BlueCar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BlueCar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GreenCar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GreenCar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/RedCar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/RedCar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/YellowCar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/YellowCar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Ingame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Ingame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/CarController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/CarController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/GameGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/GameGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/GoogleSheetsDatas.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/GoogleSheetsDatas/DataFromSheets.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/GoogleSheetsDatas/DataFromSheets.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/ShopButtonExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ShopButtonExample.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Station.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Station.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +130,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Car/CarGageBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/GameGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/ShopButtonExample.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/ShopController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/강정호/Tips.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -120,6 +235,23 @@
       <workItem from="1675406206172" duration="2065000" />
       <workItem from="1675424708437" duration="4114000" />
       <workItem from="1675713202497" duration="531000" />
+      <workItem from="1675761795763" duration="16835000" />
+      <workItem from="1675942575211" duration="2796000" />
+      <workItem from="1675957940170" duration="5235000" />
+      <workItem from="1676023918802" duration="4407000" />
+      <workItem from="1676033032807" duration="6610000" />
+      <workItem from="1676096861844" duration="12790000" />
+      <workItem from="1676175154496" duration="2107000" />
+      <workItem from="1676249058573" duration="15354000" />
+      <workItem from="1676295321486" duration="925000" />
+      <workItem from="1676453506553" duration="12324000" />
+      <workItem from="1676520734818" duration="4722000" />
+      <workItem from="1676527911146" duration="4420000" />
+      <workItem from="1676538413239" duration="6660000" />
+      <workItem from="1676614555851" duration="3997000" />
+      <workItem from="1676700013033" duration="38107000" />
+      <workItem from="1677050772778" duration="8512000" />
+      <workItem from="1677127255137" duration="15225000" />
     </task>
     <servers />
   </component>

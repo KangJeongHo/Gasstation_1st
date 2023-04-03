@@ -141,7 +141,7 @@ public class CarController : MonoBehaviour
 
     IEnumerator LubCheck()                                                                   // 주유기 설치 유무 체크 코루틴
     { //주유기 체크는 나중에 게임 제너레이터나 디렉터로 가야할듯.
-        while (GameObject.Find("EventSystem").GetComponent<GameManager>().lubCount0 == 0)
+        while (GameManager.Instance.lubCount0 == 0/*GameObject.Find("GameManager").GetComponent<GameManager>().lubCount0 == 0*/)
         {
             Debug.Log("차량 주유기 설치 인식 대기중..");                                     // 주유기가 설치되어있는지 확인함. 확인이 되면 아래 카 스폰 코루틴 시작함.
             yield return new WaitForSeconds(1f);
@@ -150,6 +150,8 @@ public class CarController : MonoBehaviour
         StartCoroutine(carSpawnCoroutine);
     }
 
+            
+    
     IEnumerator CarSpawn()
     {
         Debug.Log("CarSpawn 코루틴 진입");
@@ -164,7 +166,7 @@ public class CarController : MonoBehaviour
         Debug.Log("차량이 오기까지 걸리는 시간 : " + randomTimeSpawn + "초");
         Debug.Log("차량이 완충까지 걸리는 시간 : " + gasAmountRand + "초");
         yield return new WaitForSeconds(randomTimeSpawn);                                    // 차량이 다시 오는데까지 기다림.
-        while (GameObject.Find("EventSystem").GetComponent<GameManager>().lubCount0 == 1)
+        while (GameManager.Instance.lubCount0 == 1/*GameObject.Find("GameManager").GetComponent<GameManager>().lubCount0 == 1*/)
         {                                                                                    // 주유기가 설치되어있다면 작동하는 내용.
             if (carInstance1 == null)
             {                                                                                //차량이 나타날 수 있도록 게임오브젝트(차량)을 소환해줌(주유기 부지 위치애)

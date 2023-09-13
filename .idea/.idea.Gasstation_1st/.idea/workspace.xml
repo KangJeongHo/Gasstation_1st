@@ -4,49 +4,70 @@
     <list default="true" id="1c04897e-6f0f-45c0-9bed-486daf3292c8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Gasstation_1st/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gasstation_1st/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Font/Maplestory OTF Light SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Font/Maplestory OTF Light SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/BlueCar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/BlueCar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/BlueCar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/BlueCar.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/GreenCar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/GreenCar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/GreenCar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/GreenCar.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/RedCar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/RedCar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/RedCar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/RedCar.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/YellowCar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/YellowCar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/YellowCar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/YellowCar.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/BlueCar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BlueCar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/FuckCar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/FuckCar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/GreenCar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GreenCar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/RedCar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/RedCar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/YellowCar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/YellowCar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StartScene/Road.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StartScene/Road.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StartScene/Sky.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StartScene/Sky.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Ingame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Ingame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Car/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Car/CarController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/GameDirector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/GameDirector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/GameGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/GameGenerator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/GameManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/GameManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Item.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Item.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/MenuScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/MenuScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Roh_Lib.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Roh_Lib.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Shop.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Shop.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/ShopButtonExample.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/ShopButtonExample.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/ShopController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/ShopController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Station.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Station.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Test.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Test.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/TimeController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/TimeController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/노명보.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ShopScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ShopScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Car.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Car/CarController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Car/CarController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Car/CarGageBar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Car/CarGageBar.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/LoadScene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/LoadScene/ButtonController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/LoadScene/ButtonController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/LoadScene/LoadSceneController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/LoadScene/LoadSceneController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/GameDirector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/GameDirector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/GameGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/GameGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/GameManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/GameManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/MainButtons.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/MainButtons.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/PlayerScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/PlayerScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/ShopController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/ShopController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/SpawnExample.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/SpawnExample.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/TimeController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MainScene/TimeController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Sound.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Sound/SoundController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Sound/SoundController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/StartScene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/StartScene/StartScene.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/StartScene/StartScene.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tree_Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tree_Textures/diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tree_Textures/diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tree_Textures/normal_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tree_Textures/normal_specular.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tree_Textures/shadow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tree_Textures/shadow.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tree_Textures/translucency_gloss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tree_Textures/translucency_gloss.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Icons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Icons/Help_Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Icons/Help_Icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Icons/Mobile 2D.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Icons/Mobile 2D.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Layout.wlt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Layout.wlt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Readme.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TutorialInfo/Scripts/Readme.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +75,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Car/CarGageBar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/강정호/Tips.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/2_MainScene/3_Cars/CarManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/ca/6fc8d3df/IEnumerator.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -73,7 +94,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -181,6 +202,15 @@
       <workItem from="1679892199330" duration="3764000" />
       <workItem from="1679987979364" duration="8683000" />
       <workItem from="1680497518804" duration="854000" />
+      <workItem from="1680521872047" duration="3954000" />
+      <workItem from="1680597052777" duration="1098000" />
+      <workItem from="1680600341524" duration="913000" />
+      <workItem from="1680625933694" duration="1910000" />
+      <workItem from="1680668479095" duration="37492000" />
+      <workItem from="1681373164759" duration="5179000" />
+      <workItem from="1681402219130" duration="3549000" />
+      <workItem from="1681452853386" duration="3136000" />
+      <workItem from="1688964008678" duration="13273000" />
     </task>
     <servers />
   </component>
